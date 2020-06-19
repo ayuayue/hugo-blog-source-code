@@ -1,0 +1,84 @@
+# 指定语言环境
+language: go
+# 指定需要sudo权限
+sudo: required
+# 指定node_js版本
+go:
+  - 1.13
+# 指定缓存模块，可选。缓存可加快编译速度。
+cache:
+  directories:
+    - themes
+
+# 指定博客源码分支，因人而异。hexo博客源码托管在独立repo则不用设置此项
+branches:
+  only:
+    - hugo
+
+before_install:
+
+
+# Start: Build Lifecycle
+install:
+  - wget "https://github.com/gohugoio/hugo/releases/download/v0.72.0/hugo_extended_0.72.0_Linux-64bit.tar.gz"
+  - tar -xzvf hugo_extended_0.72.0_Linux-64bit.tar.gz
+  - cd hugo_extended_0.72.0_Linux-64bit
+  - chmod +x hugo
+  - export PATH=$PATH:$PWDv
+
+# 执行清缓存，生成网页操作
+script:
+  - hugo
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - git config user.name "ayuayue"
+  - git config user.email "1401262639@qq.com"
+  # 替换同目录下的_config.yml文件中gh_token字符串为travis后台刚才配置的变量，注意此处sed命令用了双引号。单引号无效！
+  - sed -i "s/gh_token/${GIT_TOKEN}/g" ./_config.yml
+  - sed -i "s/cd_token/${WHnwvORRxx}/g" ./_config.yml
+  - sed -i "s/gitalk_token/${GITALK}/g" ./gitalk.init.js
+  - hexo deploy
+  - node ./gitalk.init.js
+# End: Build LifeCycle
+
+language: go
+
+branches:
+  only:
+    - blog  # 设置自动化部署的源码分支
+    - 2-travis-auto-depoly # test for travis
+
+# cache this directory
+cache:
+  directories:
+    - themes
+    # - public
+    #- themes 主题没有更改时可以缓存
+
+before_install:
+- export TZ='Asia/Shanghai'  # 设置时区
+  #- npm install -g hexo
+  #- npm install -g hexo-cli
+
+# 安装依赖组件
+install:
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.72.0/hugo_extended_0.72.0_Linux-64bit.tar.gz
+  - tar -xzvf hugo_extended_0.72.0_Linux-64bit.tar.gz
+  - cd hugo_extended_0.72.0_Linux-64bit
+  - chmod +x hugo
+  - export PATH=$PATH:$PWD
+  - hugo version
+    #- git clone -b ${TRAVIS_BRANCH} --recursive https://github.com/m2kar.github.io.git
+    #- cd m2kar.github.io
+  - git log -p -2 | cat
+  - commit_msg=$(git log -n1 --pretty=format:"%s")
+  - git clone --recursive -b master https://${GH_APIKEY}@github.com/m2kar/m2kar.github.io.git public
+  - rm -rf public/*
+
+script:
+  - hugo 
+  - git add .
+  - git commit -m "auto depoly"
+  - git push
+
