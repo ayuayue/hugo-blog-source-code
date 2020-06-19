@@ -24,7 +24,7 @@ install:
   - tar -xzvf hugo_extended_0.72.0_Linux-64bit.tar.gz
   - cd hugo_extended_0.72.0_Linux-64bit
   - chmod +x hugo
-  - export PATH=$PATH:$PWDv
+  - export PATH=$PATH:$PWD
 
 # 执行清缓存，生成网页操作
 script:
