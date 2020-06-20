@@ -23,8 +23,9 @@ after_script:
   - git add .
   - git commit -m "Travis-CI 自动部署"
   # Coding Pages
-  - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" # username替换为你的coding用户名
-  - git push --force "https://${GIT_TOKEN}@github.com/ayuayue/ayuayue.github.io.git"
+  - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" master:master # username替换为你的coding用户名
+  - git push --set-upstream https://${GIT_TOKEN}@github.com/ayuayue/ayuayue.github.io.git master
+  - git push --force "https://${GIT_TOKEN}@github.com/ayuayue/ayuayue.github.io.git" master:master
 env:
   global:
     # Coding
