@@ -25,9 +25,8 @@ after_script:
   # Coding Pages
   - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" # username替换为你的coding用户名
   - git push --force "https://${GIT_TOKEN}@github.com/ayuayue/ayuayue.github.io.git"
-
 env:
   global:
     # Coding
-    - CO_REF: e.coding.net/caoayu/caoayu.git # 这里填入你的coding pages仓库地址
+    - CO_REF: e.coding.net/caoayu/hugo-blog.git # 这里填入你的coding pages仓库地址
     # Github
