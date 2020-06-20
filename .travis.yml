@@ -15,7 +15,7 @@ install:
 script:
   - hugo
 
-after-script:
+after_script:
   - cd ./public
   - git config user.name "ayuayue" # username替换为你的git username
   - git config user.email "1401262639@qq.com" # email替换为你的coding邮箱
@@ -23,12 +23,11 @@ after-script:
   - git add .
   - git commit -m "Travis-CI 自动部署"
   # Coding Pages
-  - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" master:master # username替换为你的coding用户名
-  - git push --force "https://${GIT_TOKEN}@${GIT_REF}"
+  - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" # username替换为你的coding用户名
+  - git push --force "https://${GIT_TOKEN}@github.com/ayuayue/ayuayue.github.io.git"
 
 env:
   global:
     # Coding
     - CO_REF: e.coding.net/caoayu/caoayu.git # 这里填入你的coding pages仓库地址
     # Github
-    - GIT_REF：github.com/ayuayue/ayuayue.github.io.git
