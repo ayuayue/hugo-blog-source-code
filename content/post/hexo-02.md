@@ -2,7 +2,7 @@
 title: 使用hooks自动监测git仓库更改并拉取
 date: 2020-05-10T11:38:45+08:00
 tags: [hooks]
-categories: [heox]
+categories: [hexo]
 ---
 
 我们在务器上使用宝塔进行操作,使用宝塔比较直接,可视化,各种操作和安装东西很方便(如果只是想安装一些东西,快速搭建),后面也会继续使用宝塔为网站安装`https`证书,使用`Let's Encrypt`
