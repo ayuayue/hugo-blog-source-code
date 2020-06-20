@@ -1,8 +1,16 @@
 language: go
+sudo: required
 
+cache:
+  directories:
+    - themes
+    
 install: 
-    - go get -v github.com/gohugoio/hugo
-    - go env -w GOPROXY=https://goproxy.cn,direct
+    - wget https://gohugoio/hugo/releases/download/v0.72.0/hugo_0.72.0_Linux-64bit.tar.gz"
+    - tar -xzvf hugo_0.51_Linux-64bit.tar.gz
+    - chmod +x hugo
+    - export PATH=$PATH:$PWD
+    - hugo version
 
 script:
     - hugo
