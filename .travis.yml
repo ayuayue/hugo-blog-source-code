@@ -1,6 +1,8 @@
 language: go
 
-install: go get -v github.com/gohugoio/hugo
+install: 
+    - go get -v github.com/gohugoio/hugo
+    - go env -w GOPROXY=https://goproxy.cn,direct
 
 script:
     - hugo
