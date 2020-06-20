@@ -5,27 +5,30 @@ cache:
   directories:
     - themes
 
-install: 
-    - wget https://github.com/gohugoio/hugo/releases/download/v0.72.0/hugo_0.72.0_Linux-64bit.tar.gz
-    - tar -xzvf hugo_0.72.0_Linux-64bit.tar.gz
-    - chmod +x hugo
-    - export PATH=$PATH:$PWD
-    - hugo version
+install:
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.72.0/hugo_0.72.0_Linux-64bit.tar.gz
+  - tar -xzvf hugo_0.72.0_Linux-64bit.tar.gz
+  - chmod +x hugo
+  - export PATH=$PATH:$PWD
+  - hugo version
 
 script:
-    - hugo
-    
-deploy:
-    - cd ./public
-    - git config user.name "ayuayue" # username替换为你的git username
-    - git config user.email "1401262639@qq.com" # email替换为你的coding邮箱
-    - git init
-    - git add .
-    - git commit -m "Travis-CI 自动部署"
-    # Coding Pages
-    - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" master:master # username替换为你的coding用户名
+  - hugo
+
+after-script:
+  - cd ./public
+  - git config user.name "ayuayue" # username替换为你的git username
+  - git config user.email "1401262639@qq.com" # email替换为你的coding邮箱
+  - git init
+  - git add .
+  - git commit -m "Travis-CI 自动部署"
+  # Coding Pages
+  - git push --force "https://18737001259:${WHnwvORRxx}@${CO_REF}" master:master # username替换为你的coding用户名
+  - git push --force "https://${GIT_TOKEN}@${GIT_REF}"
 
 env:
-    global:
-        # Coding Pages
-        - CO_REF: e.coding.net/caoayu/caoayu.git # 这里填入你的coding pages仓库地址 例如：git.coding.net/username/hugo.git   
+  global:
+    # Coding
+    - CO_REF: e.coding.net/caoayu/caoayu.git # 这里填入你的coding pages仓库地址
+    # Github
+    - GIT_REF：github.com/ayuayue/ayuayue.github.io.git
