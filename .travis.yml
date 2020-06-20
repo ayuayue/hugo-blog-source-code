@@ -81,4 +81,3 @@ script:
   - git add .
   - git commit -m "auto depoly"
   - git push
-
