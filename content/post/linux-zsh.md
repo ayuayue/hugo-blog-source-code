@@ -48,10 +48,9 @@ categories: [linux]
 >
 >alias mkdir='sudo mkdir' 	//配置命令别名
 >
->
-> export GOPROXY=https://goproxy.cn
+>export GOPROXY=https://goproxy.cn
 > export PATH=$PATH:$MYVIMRC:$GOPROY 	//配置环境变量
->
+> 
 >
 
 配置更改后需要重载才能生效
