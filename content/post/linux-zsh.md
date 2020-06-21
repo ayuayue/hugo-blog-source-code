@@ -1,3 +1,12 @@
+---
+title: linux 安装并配置zsh
+date: 2020-06-21T10:24:08+08:00
+tags: [zsh,linux]
+categories: [linux]
+---
+
+
+
 #### linux下zsh的安装及配置
 
 安装
