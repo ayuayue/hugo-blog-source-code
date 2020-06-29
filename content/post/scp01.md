@@ -23,7 +23,7 @@ categories: [linux]
    local_folder : 下载到本地的路径
    ```
 
-   [这篇文章讲到了怎么配置ssh免登陆不需要每次上传或下载文件都输入密码](https://www.caoayu.xyz/ssh-auth)
+   [这篇文章讲到了怎么配置ssh免登陆不需要每次上传或下载文件都输入密码](https://www.caoayu.xyz/post/ssh-auth)
 
 2. 上传文件
 
