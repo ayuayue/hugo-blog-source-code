@@ -18,7 +18,6 @@ description:
 5. `.Site.Copyright` : 配置中的 版权信息
 6. `.Site.Data` : 自定义的在 /data/目录下的数据
 7. `.Site.DisqusShortname` : 配置中的段代码名
-<!--more-->
 8. `.Site.GooGleAnalytics` : 配置中定义的 Google 分析码
 9. `.Site.Home` : 首页对象
 10. `.Site.IsMultiLingual` : 是否有不止一种语言

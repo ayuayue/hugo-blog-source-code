@@ -17,7 +17,6 @@ description:
 5. ` .Descriptin ` : 页面描述
 6. ` .Dir ` : 当前内容所在的文件路径
 7. ` .Draft ` : 布尔值,是否为草稿
-<!--more-->
 8. ` .ExpiryData ` : 过期时间
 9. ` .File ` : 当前内容相关的数据文件
 10.  ` .FuzzyWordCount ` : 内容中的大概字数
