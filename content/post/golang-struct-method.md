@@ -1,5 +1,5 @@
 ---
-title: "golang使用工厂函数实例结构体"
+title: "Go使用工厂函数实例结构体"
 date: 2020-07-04T21:47:30+08:00
 draft: false
 tags: [golang]
