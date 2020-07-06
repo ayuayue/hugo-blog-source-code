@@ -1,5 +1,5 @@
 ---
-title: "Go使用工厂函数实例结构体"
+title: "Go使用工厂方法实例结构体"
 date: 2020-07-04T21:47:30+08:00
 draft: false
 tags: [golang]
@@ -14,7 +14,7 @@ categories: [golang]
 
 首先定义一个结构体
 
-```golang
+```Go
 type Exmple struct{
 	ID int
 	Name string
@@ -23,7 +23,7 @@ type Exmple struct{
 
 开始构造
 
-```
+```Go
 func NewExmple(id int,name string) *Exmple {
 	if id <0 {
 		return nil
@@ -37,7 +37,7 @@ func NewExmple(id int,name string) *Exmple {
 
 调用
 
-```golang
+```Go
 exmple := NewExmple(1,"lili")
 ```
 

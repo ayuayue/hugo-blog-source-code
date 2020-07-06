@@ -14,7 +14,7 @@ categories: [golang]
 
 `golang flag` 包对于命令行的参数格式有要求,如下
 
-```
+```GO
 -flag 
 -flag=x
 -flag x //只支持非bool类型
