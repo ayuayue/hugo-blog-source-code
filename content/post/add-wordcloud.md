@@ -9,6 +9,7 @@ categories: [前端]
 更换标签显示以及分类显示,使用 `highcharts` 的 `wordcloud` 来实现一个更好看的标签云,并增加点击事件,实现原来的点击效果.[官方案例](https://jshare.com.cn/demos/IOrsq7?hc-theme=grid-light).[英文文档](https://api.highcharts.com.cn/en/highcharts/series.wordcloud.html)
 
 #### 按官方顺序将`js`文件导入或者使用`cdn`引入
+本文使用官方提供的`https cdn`,注意`https`网站引用`http`会有问题
 
 ### 修改主题文件下的 `even/layouts/_default/terms.html` 文件
 主要是判断`url`的`name`,分 `tags` 和 ` categories `两种情况进行处理
@@ -19,10 +20,10 @@ categories: [前端]
 {{ $name := .Data.Plural -}}
 {{ $terms := .Data.Terms.ByCount -}}
 {{ $length := len $terms -}}
-<script src="http://qiniu.caoayu.xyz/highcharts.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/exporting.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/wordcloud.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/oldie.js" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/highcharts.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/exporting.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/wordcloud.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/oldie.js"></script>
 {{ if eq $name "categories" -}}
 <div class="terms">
   <div class="terms-title">

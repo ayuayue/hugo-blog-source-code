@@ -3,10 +3,10 @@
 {{ $name := .Data.Plural -}}
 {{ $terms := .Data.Terms.ByCount -}}
 {{ $length := len $terms -}}
-<script src="http://qiniu.caoayu.xyz/highcharts.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/exporting.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/wordcloud.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/oldie.js" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/highcharts.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/exporting.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/wordcloud.js"></script>
+<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/oldie.js"></script>
 {{ if eq $name "categories" -}}
 <div class="terms">
   <div class="terms-title">
