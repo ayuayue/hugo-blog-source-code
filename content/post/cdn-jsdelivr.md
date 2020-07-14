@@ -43,7 +43,7 @@ categories: [CDN]
 
 演示视屏
 
-{{< video src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" >}}
+{{< video src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/picgo-typora-1.mp4" >}}
 
 
 ### 上传视频时遇到的问题

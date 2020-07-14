@@ -109,13 +109,13 @@ categories: [hugo]
      
            required param
            you can extract from video url
-           url format "http://qiniu.caoayu.xyz/picgo-typora-1.mp4"
+           url format "https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/picgo-typora-1.mp4"
      
          ### Examples:
      
          - Simple
    
-       \{\{< video src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" >\}\}
+       \{\{< video src="picgo-typora-1.mp4" >\}\}
      
      */}}
    
