@@ -83,7 +83,7 @@ categories: [前端]
               click: function (e) {
                 // 单条数据
                 var path = e.point.options.name;
-                window.location.href = "/tags/" + path;
+                window.location.href = "/categories/" + path;
               }
             }
           }
