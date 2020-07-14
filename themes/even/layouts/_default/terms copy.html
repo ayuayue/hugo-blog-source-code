@@ -16,6 +16,15 @@
     {{ T "categoryCounter" $length }}
     {{- end }}
   </div>
+  <!-- <div class="terms-tags">
+    {{ range $key, $value := $terms -}}
+    <a class="terms-link"
+      href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
+      {{ $value.Term }}11
+      <span class="terms-count">{{ len $value.Pages }}</span>
+    </a>
+    {{ end -}}
+  </div> -->
     <div id=categories></div>
     <script>
       var terms = {{ $terms }};
@@ -83,6 +92,16 @@
     {{ T "tagCounter" $length }}
     {{- end }}
   </div>
+    <!-- 原来的标签,注释掉 -->
+  <!-- <div class="terms-tags">
+    {{- range $key, $value := $terms }}
+    <a class="terms-link"
+      href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
+      {{ $value.Term }}
+      <span class="terms-count">{{ len $value.Pages }}1111</span>
+    </a>
+    {{ end -}}
+  </div> -->
   <div id=tags></div>
   <script>
     var terms = {{ $terms }};

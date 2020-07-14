@@ -1,3 +1,19 @@
+---
+title: "增加标签云代替原有标签和分类效果"
+date: 2020-07-14T13:38:22+08:00
+draft: false
+tags: [前端]
+categories: [前端]
+---
+### 更换`hugo`博客主题的原有标签
+更换标签显示以及分类显示,使用 `highcharts` 的 `wordcloud` 来实现一个更好看的标签云,并增加点击事件,实现原来的点击效果.[官方案例](https://jshare.com.cn/demos/IOrsq7?hc-theme=grid-light).[英文文档](https://api.highcharts.com.cn/en/highcharts/series.wordcloud.html)
+
+#### 按官方顺序将`js`文件导入或者使用`cdn`引入
+
+### 修改主题文件下的 `even/layouts/_default/terms.html` 文件
+主要是判断`url`的`name`,分 `tags` 和 ` categories `两种情况进行处理
+全部文件如下:
+```html
 {{- define "title" }}{{ T .Data.Plural }} - {{ .Site.Title }}{{ end -}}
 {{- define "content" -}}
 {{ $name := .Data.Plural -}}
@@ -144,4 +160,4 @@
 
 {{- end }}
 {{- end }}
-
+```
