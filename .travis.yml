@@ -1,9 +1,9 @@
 language: go
 sudo: required
 
-cache:
-  directories:
-    - themes
+# cache:
+#   directories:
+#     - themes
 
 install:
   - wget https://github.com/gohugoio/hugo/releases/download/v0.72.0/hugo_0.72.0_Linux-64bit.tar.gz

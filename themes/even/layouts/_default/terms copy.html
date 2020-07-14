@@ -3,10 +3,10 @@
 {{ $name := .Data.Plural -}}
 {{ $terms := .Data.Terms.ByCount -}}
 {{ $length := len $terms -}}
-<script src="https://code.highcharts.com.cn/highcharts/8.1.2/highcharts.js"></script>
-<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/exporting.js"></script>
-<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/wordcloud.js"></script>
-<script src="https://code.highcharts.com.cn/highcharts/8.1.2/modules/oldie.js"></script>
+<script src="http://qiniu.caoayu.xyz/highcharts.js" crossorigin="anonymous"></script>
+<script src="http://qiniu.caoayu.xyz/exporting.js" crossorigin="anonymous"></script>
+<script src="http://qiniu.caoayu.xyz/wordcloud.js" crossorigin="anonymous"></script>
+<script src="http://qiniu.caoayu.xyz/oldie.js" crossorigin="anonymous"></script>
 {{ if eq $name "categories" -}}
 <div class="terms">
   <div class="terms-title">
@@ -16,6 +16,15 @@
     {{ T "categoryCounter" $length }}
     {{- end }}
   </div>
+  <!-- <div class="terms-tags">
+    {{ range $key, $value := $terms -}}
+    <a class="terms-link"
+      href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
+      {{ $value.Term }}11
+      <span class="terms-count">{{ len $value.Pages }}</span>
+    </a>
+    {{ end -}}
+  </div> -->
     <div id=categories></div>
     <script>
       var terms = {{ $terms }};
@@ -66,7 +75,7 @@
               click: function (e) {
                 // 单条数据
                 var path = e.point.options.name;
-                window.location.href = "/categories/" + path;
+                window.location.href = "/tags/" + path;
               }
             }
           }
@@ -83,6 +92,16 @@
     {{ T "tagCounter" $length }}
     {{- end }}
   </div>
+    <!-- 原来的标签,注释掉 -->
+  <!-- <div class="terms-tags">
+    {{- range $key, $value := $terms }}
+    <a class="terms-link"
+      href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
+      {{ $value.Term }}
+      <span class="terms-count">{{ len $value.Pages }}1111</span>
+    </a>
+    {{ end -}}
+  </div> -->
   <div id=tags></div>
   <script>
     var terms = {{ $terms }};
