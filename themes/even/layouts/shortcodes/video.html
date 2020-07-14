@@ -1,0 +1,22 @@
+  {{/*
+      ## Video mp4 AVC
+
+      ### Params:
+  
+      - `src`
+  
+        required param
+        you can extract from video url
+        url format "http://qiniu.caoayu.xyz/picgo-typora-1.mp4"
+  
+      ### Examples:
+  
+      - Simple
+
+    {{< video src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" >}}
+  
+  */}}
+
+<iframe src="{{ .Get "src" }}"
+    scrolling="no" height="485px" width="930px" frameborder="no" framespacing="0" allowfullscreen="true">
+</iframe>

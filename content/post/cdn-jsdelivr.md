@@ -24,7 +24,7 @@ categories: [CDN]
 
 ![image-20200714193939644](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200714193941.png)
 
-![image-20200714194028142](C:\Users\caoayu\AppData\Roaming\Typora\typora-user-images\image-20200714194028142.png)![image-20200714194028166](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200714194030.png)
+![image-20200714194028166](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200714194030.png)
 
 权限只给一个 `repo` 即可,保存生成的`token`,以后不能再显示出来了
 
@@ -40,11 +40,11 @@ categories: [CDN]
 
 前面几篇文章讲到过使用`picgo + typora`, 这里展示下具体的效果  
 
+
 演示视屏
 
-<video id="video" controls="" preload="none" poster="">
-<source id="mp4" src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" type="video/mp4">
-</video>
+{{< video src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" >}}
+
 
 ### 上传视频时遇到的问题
 
