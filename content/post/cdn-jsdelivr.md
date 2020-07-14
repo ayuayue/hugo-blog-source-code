@@ -41,7 +41,7 @@ categories: [CDN]
 前面几篇文章讲到过使用`picgo + typora`, 这里展示下具体的效果  
 
 
-演示视屏
+演示视频
 
 {{< video src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/picgo-typora-1.mp4" >}}
 
