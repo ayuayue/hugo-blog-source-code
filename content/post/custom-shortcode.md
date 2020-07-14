@@ -45,14 +45,14 @@ categories: [hugo]
       ### Examples:
   
       - Simple
-  
-        {{% music "3950552" %}}
-        {{% music "3950552" "1" %}}
+  		### \为转义
+        \{\{< music "3950552" >\}\}
+        \{\{< music "3950552" "1" >\}\}
   
       - Named Params
   
-        {{% music id="3950552" %}}
-        {{% music id="3950552" auto="1" %}}
+        \{\{< music id="3950552" >\}\}
+        \{\{< music id="3950552" auto="1" >\}\}
   
   */}}
   
@@ -115,7 +115,7 @@ categories: [hugo]
      
          - Simple
    
-       {{< video src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" >}}
+       \{\{< video src="http://qiniu.caoayu.xyz/picgo-typora-1.mp4" >\}\}
      
      */}}
    
