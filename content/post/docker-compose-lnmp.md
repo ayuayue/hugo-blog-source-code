@@ -1,7 +1,7 @@
 ---
 title: "使用docker-compose 搭建 lnmp"
 date: 2020-07-13T21:13:21+08:00
-draft: false
+draft: true
 tags: [docker,linux,lnmp]
 categories: [docker]
 ---
