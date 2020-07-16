@@ -1,5 +1,5 @@
 ---
-title: "虚拟机安装Cnetos后的一些配置"
+title: "虚拟机安装Centos后的一些配置"
 date: 2020-07-15T21:35:42+08:00
 draft: false
 tags: [linux]
