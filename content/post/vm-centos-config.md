@@ -22,9 +22,9 @@ categories: [linux]
 
 2. 下载阿里云的源文件
 
-```bash
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-```
+   ```bash
+   wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+   ```
 
  3. 更新缓存
 
