@@ -14,8 +14,9 @@ categories: [linux]
 
 ### 如何搭建
 
-想要搭建一个`frp`服务，需要服务器端和客户端安装`frp`应用，通过`frp`应用进行通信，安装在服务器的叫做`frps`，安装在客户端的叫`frpc`，**注意，客户端和服务端的版本要一致，因为同一个包中同时包含客户端和服务端，如果客户端和服务端的系统 一样，可以用同一个包，不然就要用同一个版本的包**
+要搭建一个`frp`服务，需要服务器端和客户端安装`frp`应用，通过`frp`应用进行通信，安装在服务器的叫做`frps`，安装在客户端的叫`frpc`，**注意，客户端和服务端的版本要一致，因为同一个包中同时包含客户端和服务端，如果客户端和服务端的系统 一样，可以用同一个包，不然就要用同一个版本的包**
 
+如果宝塔安装报错可以将包上传到服务器，解压，添加进环境变量，更改配置文件，并加入开机服务，启动即可
 #### 流程
 
 1. 在服务器安装`frpc`，本文使用宝塔进行安装和配置，更加快捷直观。
@@ -32,9 +33,9 @@ categories: [linux]
 
    ![image-20200715233505096](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715233507.png)
 
-![](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715233604.png)
+   ![](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715233604.png)
 
- 4. 也可以直接修改配置文件
+ 4. 如果配置保存出现错误，直接修改配置文件
 
     ![image-20200715234953623](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715234954.png)
 
@@ -46,12 +47,12 @@ categories: [linux]
 
 客户端下载好对应的版本解压后在命令行中进行启动，可以指定配置文件，默认是有一个配置文件`frpc.ini`，`local_port` 一般设置为 80
 
-![image-20200715235434365](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715235436.png)
+   ![image-20200715235434365](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715235436.png)
 
 登录服务器的`frp web`面板，可以看到连接者的信息
 
-![image-20200715235643609](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715235645.png)
+   ![image-20200715235643609](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200715235645.png)
 
 本地跑一个80端口的服务，在服务器上就可以进行端口映射的访问了
 
-![image-20200716001413919](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200716001536.png)
+   ![image-20200716001413919](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20200716001536.png)

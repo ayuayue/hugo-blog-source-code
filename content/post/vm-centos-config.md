@@ -1,5 +1,5 @@
 ---
-title: "虚拟机安装Cnetos后的一些配置"
+title: "虚拟机安装Centos后的一些配置"
 date: 2020-07-15T21:35:42+08:00
 draft: false
 tags: [linux]
@@ -22,9 +22,9 @@ categories: [linux]
 
 2. 下载阿里云的源文件
 
-```bash
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-```
+   ```bash
+   wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+   ```
 
  3. 更新缓存
 
