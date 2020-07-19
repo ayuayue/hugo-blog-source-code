@@ -1,0 +1,32 @@
+{{/*
+      ## bilibili iframe
+
+      ### Params:
+  
+      - `bvid` int
+  
+        required param
+        
+      - `page` part
+
+  
+      ### Examples:
+  
+      - Simple
+
+    {{< bilibili bvid="BV1gt4y1976M" page="2" >}}
+
+*/}}
+
+<iframe src="//player.bilibili.com/player.html?bvid={{ .Get "vid" }}&page={{ .Get "page"}}" scrolling="no" border="0"
+    frameborder="no" framespacing="0" allowfullscreen="true" id="bilibili"> </iframe>
+
+<script>
+    var main = document.getElementById("main")
+    console.log(main)
+    var width = main.offsetWidth
+    var ifm = document.getElementById("bilibili")
+    console.log(ifm)
+    ifm.width = width
+    ifm.height = 500
+</script>

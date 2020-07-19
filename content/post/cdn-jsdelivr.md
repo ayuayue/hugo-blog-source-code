@@ -46,6 +46,7 @@ categories: [CDN]
 {{< video src="https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/picgo-typora-1.mp4" >}}
 
 
+
 ### 上传视频时遇到的问题
 
 由于录制的是`MP4`格式的视频,在上传到`cdn`后发现只能播放音频,没有视频,原因是: `MP4 AVC` 格式的视频才能在网页上正常显示,使用转码工具转码就可以了
