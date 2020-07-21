@@ -31,7 +31,7 @@ const (
 
 上面这些是官方定义的`layout`常量，我们自己也可以定义，如：
 
-```Go
+```go
 "2006-01-02 15:04:05" 
 "2006-01-02"
 "2006-01-02 15:04"
@@ -43,7 +43,7 @@ const (
 
 `format` 的使用对象是一个 `time.Time` 对象，可以使用官方或者自己定义的布局进行格式化的输出，如：
 
-```Go
+```go
 now := time.Now()
 now.Format("2006-01-02 15:04:05") //输出 2020-07-21 10:12:13
 ```
@@ -54,7 +54,7 @@ now.Format("2006-01-02 15:04:05") //输出 2020-07-21 10:12:13
 
 需要两个参数，第一个是布局，第二个是字符串
 
-```Go
+```go
 //Parse解析格式化的字符串并返回它表示的时间值。
 //布局通过显示参考时间（定义为2006年1月2日星期一1:04:05 -0700
 //如果它是值，则将被解释；它作为一个例子
@@ -81,7 +81,7 @@ func Parse(layout, value string) (Time, error) {
 
 使用例子：
 
-```Go
+```go
 eg, err := time.Parse("2006-01-02 15:04:05 -0700 MST", "2019-08-29 16:48:21 +0800 CST")
 //输出结果为time.Time格式 使用 format格式化后为 2019-08-29 16:48:21 
 ```
@@ -90,7 +90,7 @@ eg, err := time.Parse("2006-01-02 15:04:05 -0700 MST", "2019-08-29 16:48:21 +080
 
 
 
-```GO
+```go
 //ParseInLocation类似于Parse，但在两个重要方面有所不同。
 //首先，在没有时区信息的情况下，Parse将时间解释为UTC；
 //ParseInLocation将时间解释为给定位置。
@@ -107,7 +107,7 @@ func ParseInLocation(layout, value string, loc *Location) (Time, error) {
 
 使用例子：
 
-```GO
+```go
 onlineAt, err := time.ParseInLocation("2006-01-02T15:04", "2020-01-02T15:04"), time.Local)
 ```
 
@@ -115,7 +115,7 @@ onlineAt, err := time.ParseInLocation("2006-01-02T15:04", "2020-01-02T15:04"), t
 
 对于 `time.Time` 对象，可以使用`.Unix()` 方法转为 `int64`，如：
 
-```Go
+```go
 eg.Unix() //默认使用 UTC时区 
 eg.Local().Unix() //返回本地时区的时间戳 int64
 ```
