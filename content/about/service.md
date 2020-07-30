@@ -5,6 +5,6 @@ draft: false
 comment: false
 ---
 
-[在线邮件系统](http://www.caoayu.xyz:3001)
+[在线邮件系统](http://email.caoayu.xyz)
 
-[golang教程](https://www.caoayu.xyz)
+[golang 教程](http://gotour.caoayu.xyz)
