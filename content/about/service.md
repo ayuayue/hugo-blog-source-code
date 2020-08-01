@@ -7,4 +7,4 @@ comment: false
 
 [在线邮件系统](http://email.caoayu.xyz)
 
-[golang 教程](http://www.caoayu.xyz:3999)
+[gotour 官方 golang 教程](http://www.caoayu.xyz:3999)
