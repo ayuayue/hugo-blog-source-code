@@ -16,63 +16,63 @@
     {{ T "categoryCounter" $length }}
     {{- end }}
   </div>
-    <div id=categories></div>
-    <script>
-      var terms = {{ $terms }};
-      length = terms.length
-      var str = "";
-      for (i = 0; i < length; i++) {
-        str += terms[i].Name + ","
-      }
-      var text = str;
-      var data = text.split(/[,\. ]+/g)
-        .reduce(function (arr, word) {
-          var obj = arr.find(function (obj) {
-            return obj.name === word;
-          });
-          if (obj) {
-            obj.weight += 1;
-          } else {
-            obj = {
-              name: word,
-              weight: 1
-            };
-            arr.push(obj);
-          }
-          return arr;
-        }, []);
-      Highcharts.chart('categories', {
-        //highcharts logo
-        credits: { enabled: false },
-        series: [{
-          type: 'wordcloud',
-          data: data,
-          rotation: 0,//字体不旋转
-          maxFontSize: 10,//最大字体
-          minFontSize: 1,//最小字体
-          style: {
-            fontFamily: "微软雅黑",
-            fontWeight: '500'
-          }
-        }],
-        title: {
-          text: ''
-        },
-        //点击事件方法
-        plotOptions: {
-          series: {
-            cursor: 'pointer',
-            events: {
-              click: function (e) {
-                // 单条数据
-                var path = e.point.options.name;
-                window.location.href = "/categories/" + path;
-              }
+  <div id=categories></div>
+  <script>
+    var terms = {{ $terms }};
+    length = terms.length
+    var str = "";
+    for (i = 0; i < length; i++) {
+      str += terms[i].Name + ","
+    }
+    var text = str;
+    var data = text.split(/[,\. ]+/g)
+      .reduce(function (arr, word) {
+        var obj = arr.find(function (obj) {
+          return obj.name === word;
+        });
+        if (obj) {
+          obj.weight += 1;
+        } else {
+          obj = {
+            name: word,
+            weight: 1
+          };
+          arr.push(obj);
+        }
+        return arr;
+      }, []);
+    Highcharts.chart('categories', {
+      //highcharts logo
+      credits: { enabled: false },
+      series: [{
+        type: 'wordcloud',
+        data: data,
+        rotation: 0,//字体不旋转
+        maxFontSize: 10,//最大字体
+        minFontSize: 1,//最小字体
+        style: {
+          fontFamily: "微软雅黑",
+          fontWeight: '500'
+        }
+      }],
+      title: {
+        text: ''
+      },
+      //点击事件方法
+      plotOptions: {
+        series: {
+          cursor: 'pointer',
+          events: {
+            click: function (e) {
+              // 单条数据
+              var path = e.point.options.name;
+              window.location.href = "/categories/" + path;
             }
           }
-        },
-      });
-    </script>
+        }
+      },
+    });
+  </script>
 </div>
 {{- else if eq $name "tags" -}}
 <div class="terms">
@@ -144,4 +144,3 @@
 
 {{- end }}
 {{- end }}
-

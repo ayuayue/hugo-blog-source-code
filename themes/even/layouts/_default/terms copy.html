@@ -1,166 +1,44 @@
 {{- define "title" }}{{ T .Data.Plural }} - {{ .Site.Title }}{{ end -}}
+
 {{- define "content" -}}
-{{ $name := .Data.Plural -}}
-{{ $terms := .Data.Terms.ByCount -}}
-{{ $length := len $terms -}}
-<script src="http://qiniu.caoayu.xyz/highcharts.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/exporting.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/wordcloud.js" crossorigin="anonymous"></script>
-<script src="http://qiniu.caoayu.xyz/oldie.js" crossorigin="anonymous"></script>
-{{ if eq $name "categories" -}}
-<div class="terms">
-  <div class="terms-title">
-    {{ if eq $length 0 -}}
-    {{ T "zeroCategoryCounter" }}
-    {{- else -}}
-    {{ T "categoryCounter" $length }}
-    {{- end }}
-  </div>
-  <!-- <div class="terms-tags">
-    {{ range $key, $value := $terms -}}
-    <a class="terms-link"
-      href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
-      {{ $value.Term }}11
-      <span class="terms-count">{{ len $value.Pages }}</span>
-    </a>
-    {{ end -}}
-  </div> -->
-    <div id=categories></div>
-    <script>
-      var terms = {{ $terms }};
-      length = terms.length
-      var str = "";
-      for (i = 0; i < length; i++) {
-        str += terms[i].Name + ","
-      }
-      var text = str;
-      var data = text.split(/[,\. ]+/g)
-        .reduce(function (arr, word) {
-          var obj = arr.find(function (obj) {
-            return obj.name === word;
-          });
-          if (obj) {
-            obj.weight += 1;
-          } else {
-            obj = {
-              name: word,
-              weight: 1
-            };
-            arr.push(obj);
-          }
-          return arr;
-        }, []);
-      Highcharts.chart('categories', {
-        //highcharts logo
-        credits: { enabled: false },
-        series: [{
-          type: 'wordcloud',
-          data: data,
-          rotation: 0,//字体不旋转
-          maxFontSize: 10,//最大字体
-          minFontSize: 1,//最小字体
-          style: {
-            fontFamily: "微软雅黑",
-            fontWeight: '500'
-          }
-        }],
-        title: {
-          text: ''
-        },
-        //点击事件方法
-        plotOptions: {
-          series: {
-            cursor: 'pointer',
-            events: {
-              click: function (e) {
-                // 单条数据
-                var path = e.point.options.name;
-                window.location.href = "/tags/" + path;
-              }
-            }
-          }
-        },
-      });
-    </script>
-</div>
-{{- else if eq $name "tags" -}}
-<div class="terms">
-  <div class="terms-title">
-    {{ if eq $length 0 -}}
-    {{ T "zeroTagCounter" }}
-    {{- else -}}
-    {{ T "tagCounter" $length }}
-    {{- end }}
-  </div>
-    <!-- 原来的标签,注释掉 -->
-  <!-- <div class="terms-tags">
-    {{- range $key, $value := $terms }}
-    <a class="terms-link"
-      href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
-      {{ $value.Term }}
-      <span class="terms-count">{{ len $value.Pages }}1111</span>
-    </a>
-    {{ end -}}
-  </div> -->
-  <div id=tags></div>
-  <script>
-    var terms = {{ $terms }};
-    length = terms.length
-    var str = "";
-    for (i = 0; i < length; i++) {
-      str += terms[i].Name + ","
-    }
-    var text = str;
-    var data = text.split(/[,\. ]+/g)
-      .reduce(function (arr, word) {
-        var obj = arr.find(function (obj) {
-          return obj.name === word;
-        });
-        if (obj) {
-          obj.weight += 1;
-        } else {
-          obj = {
-            name: word,
-            weight: 1
-          };
-          arr.push(obj);
-        }
-        return arr;
-      }, []);
-    Highcharts.chart('tags', {
-      //highcharts logo
-      credits: { enabled: false },
-      series: [{
-        type: 'wordcloud',
-        data: data,
-        rotation: 0,//字体不旋转
-        maxFontSize: 10,//最大字体
-        minFontSize: 1,//最小字体
-        style: {
-          fontFamily: "微软雅黑",
-          fontWeight: '500'
-        }
-      }],
-      title: {
-        text: ''
-      },
-      //点击事件方法
-      plotOptions: {
-        series: {
-          cursor: 'pointer',
-          events: {
-            click: function (e) {
-              // 单条数据
-              var path = e.point.options.name;
-              window.location.href = "/tags/" + path;
-            }
-          }
-        }
-      },
-    });
-  </script>
-</div>
-
+  {{ $name := .Data.Plural -}}
+  {{ $terms := .Data.Terms.ByCount -}}
+  {{ $length := len $terms -}}
+  {{ if eq $name "categories" -}}
+    <div class="terms">
+      <div class="terms-title">
+        {{ if eq $length 0 -}}
+          {{ T "zeroCategoryCounter" }}
+        {{- else -}}
+          {{ T "categoryCounter" $length }}
+        {{- end }}
+      </div>
+      <div class="terms-tags">
+        {{ range $key, $value := $terms -}}
+          <a class="terms-link" href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}/">
+            {{ $value.Term }}
+            <span class="terms-count">{{ len $value.Pages }}</span>
+          </a>
+        {{ end -}}
+      </div>
+    </div>
+  {{- else if eq $name "tags" -}}
+    <div class="terms">
+      <div class="terms-title">
+        {{ if eq $length 0 -}}
+          {{ T "zeroTagCounter" }}
+        {{- else -}}
+          {{ T "tagCounter" $length }}
+        {{- end }}
+      </div>
+      <div class="terms-tags">
+        {{- range $key, $value := $terms }}
+          <a class="terms-link" href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}/">
+            {{ $value.Term }}
+            <span class="terms-count">{{ len $value.Pages }}</span>
+          </a>
+        {{ end -}}
+      </div>
+    </div>
+  {{- end }}
 {{- end }}
-{{- end }}
-
