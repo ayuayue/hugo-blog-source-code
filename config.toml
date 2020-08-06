@@ -51,11 +51,38 @@ identifier = "categories"
 url = "/categories/"
 
 [[menu.main]]
-name = "关于"
+name = "其他"
 weight = 50
 identifier = "about"
 url = "/about"
 
+[[menu.main]]
+name = "搜索"
+weight = 400
+identifier = "search"
+url = "/search"
+parent = "about"
+
+[[menu.main]]
+name = "友情链接"
+identifier = "friends"
+url = "/about/friends"
+parent = "about"
+weight = 300
+
+[[menu.main]]
+name = "联系我"
+identifier = "call-me"
+url = "/about/call-me"
+parent = "about"
+weight = 200
+
+[[menu.main]]
+name = "在线服务"
+identifier = "services"
+url = "/about/services"
+parent = "about"
+weight = 100
 
 [params]
 version = "4.x" # Used to give a friendly message when you have an incompatible update
@@ -79,10 +106,10 @@ toc = true
 autoCollapseToc = true
 fancybox = true
 # mathjax
-mathjax = true # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
-mathjaxEnableSingleDollar = true # 是否使用 $...$ 即可進行inline latex渲染
-mathjaxEnableAutoNumber = true # 是否使用公式自动编号
-mathjaxUseLocalFiles = true # You should install mathjax in `your-site/static/lib/mathjax`
+mathjax = false # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
+mathjaxEnableSingleDollar = false # 是否使用 $...$ 即可進行inline latex渲染
+mathjaxEnableAutoNumber = false # 是否使用公式自动编号
+mathjaxUseLocalFiles = false # You should install mathjax in `your-site/static/lib/mathjax`
 postMetaInFooter = true # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown链接，许可信息
 linkToMarkDown = true # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
 contentCopyright = '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>' # e.g. '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'

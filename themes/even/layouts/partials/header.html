@@ -2,19 +2,25 @@
   <a href="{{ "/" | relLangURL }}" class="logo">
     {{- if .Site.Params.logoTitle -}}
     <img src="/images/jay.jpg" class="logo-img" alt="logo-img">
-      {{ .Site.Params.logoTitle }}
+    {{ .Site.Params.logoTitle }}
     {{- else -}}
-      {{ .Site.Title }}
+    {{ .Site.Title }}
     {{- end -}}
   </a>
 </div>
 
 <nav class="site-navbar">
-  <ul id="menu" class="menu">
-    {{ range .Site.Menus.main -}}
-      <li class="menu-item">
-        <a class="menu-item-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
-      </li>
-    {{- end }}
-  </ul>
+
+  {{ range .Site.Menus.main -}}
+  <div class="dropdown">
+    <a href="{{ .URL | safeURL }}" class="menu">{{ .Name }}</a>
+    <div class="dropdown-content">
+      {{ if .HasChildren }}
+      {{ range .Children }}
+      <a href="{{ .URL | safeURL }}" class="menu-item">{{ .Name }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  {{- end }}
 </nav>
