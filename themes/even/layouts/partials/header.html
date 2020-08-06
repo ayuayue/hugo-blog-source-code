@@ -10,7 +10,6 @@
 </div>
 
 <nav class="site-navbar">
-
   {{ range .Site.Menus.main -}}
   <div class="dropdown">
     <a href="{{ .URL | safeURL }}" class="menu">{{ .Name }}</a>
