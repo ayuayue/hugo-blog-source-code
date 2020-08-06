@@ -36,7 +36,8 @@ figure.highlight {
     }
   }
 
-  @each $sign, $text in $code-type-list {
+  @each $sign, 
+  $text in $code-type-list {
     &.#{$sign} > table::after {
       content: $text;
     }
