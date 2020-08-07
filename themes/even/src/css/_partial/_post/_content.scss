@@ -4,7 +4,7 @@
 
 .post-content {
   word-wrap: break-word;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 
   @for $i from 1 through 6 {
     h#{$i} {
