@@ -1,2 +1,4 @@
-public/*
-.vscode/*
+./public
+.vscode
+.idea
+node_modules
