@@ -64,7 +64,7 @@ parent = "about"
 weight = 300
 
 [[menu.main]]
-name = "联系我"
+name = "关于我"
 identifier = "call-me"
 url = "/about/call-me"
 parent = "about"
