@@ -12,4 +12,4 @@ comment: false
 
 [我的 QQ 移动端](mqqwpa://im/chat?chat_type=wpa&uin=1401262639&version=1&src_type=web&web_src=oicqzone.com)
 
-[my code history records](https://wakatime.com/@ayu)
+[my code history records](https://wakatime.com/@ayuayue)
