@@ -1,11 +1,11 @@
 ---
 title: linux 安装并配置zsh
 date: 2020-06-21T10:24:08+08:00
-tags: [zsh,linux]
+tags: [zsh, linux]
 categories: [linux]
 ---
 
-#### linux下zsh的安装及配置
+#### linux 下 zsh 的安装及配置
 
 安装
 
@@ -25,9 +25,9 @@ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - 
 
 **如果因为网络问题安装失败,可以使用代理,或者直接把那个文件下载到本地,添加权限后执行就好了**
 
-如果都不行可以在这里 [下载install.sh_bak](https://www. caoayu.xyz/file/install.sh_bak),下载完后把`_bak`后缀去掉
+如果都不行可以在这里 [下载 install.sh_bak](https://www.caoayu.xyz/file/install.sh_bak),下载完后把`_bak`后缀去掉
 
-安装完成 oh-my-zsh 后会自动提示你是否更改当前的shell，选择y即可更改
+安装完成 oh-my-zsh 后会自动提示你是否更改当前的 shell，选择 y 即可更改
 
 配置文件在 ~/.zshrc 中，这里可以配置一些插件和主题，以及环境变量
 
@@ -37,7 +37,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-)	 
+)
 //插件配置，常用插件，git分支显示，关键字高亮，自动建议
 source "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 alias s=screenfetch
@@ -56,7 +56,7 @@ export PATH=$PATH:$MYVIMRC:$GOPROY 	//配置环境变量
    cd ~/.oh-my-zsh/custom/plugins
    ```
 
-2. 将对应插件的`git`仓库`clong`下来即可(这里使用了镜像源,git官方站比较慢) [关于github镜像](https://www.caoayu.xyz/post/github-fast/)
+2. 将对应插件的`git`仓库`clong`下来即可(这里使用了镜像源,git 官方站比较慢) [关于 github 镜像](https://www.caoayu.xyz/post/github-fast/)
 
    ```zsh
    git clone https://github.com/zsh-users/zsh-autosuggestions.git
@@ -68,6 +68,3 @@ export PATH=$PATH:$MYVIMRC:$GOPROY 	//配置环境变量
 ```bash
 source ~/.zshrc
 ```
-
-
-
