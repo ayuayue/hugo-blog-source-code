@@ -50,7 +50,7 @@ export PATH=$PATH:$MYVIMRC:$GOPROY 	//配置环境变量
 
 对于上面配置中的两个插件安装
 
-1. 进入 `~/.oh-my-zsh/custom/plugins/
+1. 进入 `~/.oh-my-zsh/custom/plugins/`
 
    ```zsh
    cd ~/.oh-my-zsh/custom/plugins
