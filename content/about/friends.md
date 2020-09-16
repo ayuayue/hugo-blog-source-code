@@ -13,5 +13,6 @@ draft: false
 | [煎鱼](https://eddycjy.com/)  | 脑子进煎鱼了 |
 | [RyuGou](https://i6448038.github.io/) | 热爱技术，喜欢分享 |
 | [水寒的博客](https://dp2px.com) | 物联网应用开发、Android应用开发、Web前端开发技术 |
+| [Yancy_01](https://yancc.top/) | 努力努力更努力_Y |
 
 

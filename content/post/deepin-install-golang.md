@@ -29,5 +29,8 @@ source ~/.zshrc
 go 1.13版本之后的操作
 ```
 go env -w GOPROXY=https://goproxy.cn,direct
+// 如果报警告先取消掉 GOPROXY的设置
+unset GOPROXY
+// 然后再设置
 ```
 
