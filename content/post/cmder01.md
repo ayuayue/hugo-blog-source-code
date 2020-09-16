@@ -15,7 +15,7 @@ categories: [分享]
 
 现在来开始使用`cmder`来打造一个体验更好的终端,可以使用更多的`linux`命令并且外观和流畅度都很不错
 
-![效果:](/images/cmder01/cmder.gif)
+![效果:](https://www.caoayu.xyz/images/cmder01/cmder.gif)
 
 ##### 开始搭建
 
