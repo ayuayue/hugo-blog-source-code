@@ -1,6 +1,6 @@
 ---
 title: "JS Sequence Diagrams"
-date: 2015-03-04T21:57:45+08:00
+date: 2020-03-04T21:57:45+08:00
 draft: false
 
 sequenceDiagrams: 
