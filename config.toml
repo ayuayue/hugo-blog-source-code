@@ -15,7 +15,7 @@ pygmentsCodefencesGuessSyntax = true
 hasCJKLanguage = true # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 15 # 首页每页显示的文章数
 googleAnalytics = "UA-163761428-1" # UA-XXXXXXXX-X
-copyright = "Caoayu" # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "豫ICP备19012822号-2" # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author] # essential                     # 必需
 name = "Caoayu"
