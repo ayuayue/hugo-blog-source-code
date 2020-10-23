@@ -9,6 +9,7 @@ tags: [腾讯云社区文章]
 categories: [腾讯云社区文章]
 ---
 以下内容来自-腾讯云社区的文章分享
+> [云+社区杂货摊](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7774809)
 > [如何在容器服务中获取客户端真实源IP](https://cloud.tencent.com/developer/article/1721204?sharedUid=7774809)
 
 > [拖不得了，Android11真的来了，最全适配实践指南奉上](https://cloud.tencent.com/developer/article/1706411?sharedUid=7774809)
