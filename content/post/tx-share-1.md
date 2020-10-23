@@ -33,3 +33,52 @@ categories: [腾讯云社区文章]
 > [【技术创作101训练营】TensorFlow Lite的 GPU 委托（Delegate）加速模型推理](https://cloud.tencent.com/developer/article/1703192?sharedUid=7774809)
 
 > [二维码扫码技术优化方案](https://cloud.tencent.com/developer/article/1701704?sharedUid=7774809)
+
+
+> [SpringBoot多邮件源发送邮件](https://cloud.tencent.com/developer/article/1700441?sharedUid=7774809)
+
+----
+
+> [如何使用 Nextcloud 搭建个人网盘](https://cloud.tencent.com/developer/article/1356789?sharedUid=7868241)
+
+> [如何在小程序中实现 WebSocket 通信](如何在小程序中实现 WebSocket 通信)
+
+> [如何入门小程序开发](https://cloud.tencent.com/developer/article/1360040?sharedUid=7868241)
+
+> [如何在小程序中实现扫一扫功能](https://cloud.tencent.com/developer/article/1361813?sharedUid=7868241)
+
+> [如何在小程序中实现视频播放](https://cloud.tencent.com/developer/article/1362525?sharedUid=7868241)
+
+> [如何在小程序中实现音频播放](https://cloud.tencent.com/developer/article/1362479?sharedUid=7868241)
+
+> [如何部署 CDN 网络](https://cloud.tencent.com/developer/article/1358553?sharedUid=7868241)
+
+> [如何使用小程序视图容器组件](https://cloud.tencent.com/developer/article/1360803?sharedUid=7868241)
+
+> [如何在 Windows 上搭建 PHP 网站](https://cloud.tencent.com/developer/article/1358163?sharedUid=7868241)
+
+> [如何搭建 Typecho 博客](https://cloud.tencent.com/developer/article/1356132?sharedUid=7868241)
+
+> [如何部署 Docker Compose](https://cloud.tencent.com/developer/article/1367665?sharedUid=7868241)
+
+> [【玩转腾讯云】五.手把手教你用VNC搭建Ubuntu可视化界面（一）](https://cloud.tencent.com/developer/article/1609578?sharedUid=7868241)
+
+> [如何在小程序中实现拍照功能](https://cloud.tencent.com/developer/article/1361745?sharedUid=7868241)
+
+> [【玩转腾讯云】3分钟打造个人专属云盘，速度吊打某云盘](https://cloud.tencent.com/developer/article/1609648?sharedUid=7868241)
+
+> [【玩转腾讯云】二.基于CVM服务器轻松部署PostgreSQL数据库](https://cloud.tencent.com/developer/article/1608479?sharedUid=7868241)
+
+> [【玩转腾讯云】三.云端轻松构建部署WordPress网站应用](https://cloud.tencent.com/developer/article/1608906?sharedUid=7868241)
+
+> [【玩转腾讯云】一.半小时轻松搭建属于自己的Discuz论坛](https://cloud.tencent.com/developer/article/1607564?sharedUid=7868241)
+
+> [【玩转腾讯云】四.使用云服务器CVM轻松部署Node.js](https://cloud.tencent.com/developer/article/1609550?sharedUid=7868241)
+
+> [如何在小程序中实现录像功能](https://cloud.tencent.com/developer/article/1361877?sharedUid=7868241)
+
+> [如何实现小程序登录鉴权](https://cloud.tencent.com/developer/article/1360359?sharedUid=7868241)
+
+
+
+

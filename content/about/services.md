@@ -5,7 +5,7 @@ draft: false
 comment: false
 ---
 
-[在线邮件系统](http://email.caoayu.xyz)
+[在线邮件系统](http://caoayu.xyz:3001/)
 
 [在线屏幕共享](https://www.caoayu.xyz:5050)
 
