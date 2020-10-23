@@ -9,4 +9,5 @@ tags: [如何在容器服务中获取客户端真实源IP]
 categories: [如何在容器服务中获取客户端真实源IP]
 ---
 
->   [[分享]如何在容器服务中获取客户端真实源IP](https://cloud.tencent.com/developer/article/1721204?sharedUid=7774809)
+>   [如何在容器服务中获取客户端真实源IP](https://cloud.tencent.com/developer/article/1721204?sharedUid=7774809)
+    [go](https://cloud.tencent.com/developer/article/1717128?s=original-sharing&sharedUid=7774809)
