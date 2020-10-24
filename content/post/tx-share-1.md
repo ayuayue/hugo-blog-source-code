@@ -9,7 +9,11 @@ tags: [腾讯云社区文章]
 categories: [腾讯云社区文章]
 ---
 以下内容来自-腾讯云社区的文章分享
+> [活动链接入口1](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7774809)
+> [活动链接入口2](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7868241)
+
 > [云+社区杂货摊](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7774809)
+
 > [如何在容器服务中获取客户端真实源IP](https://cloud.tencent.com/developer/article/1721204?sharedUid=7774809)
 
 > [拖不得了，Android11真的来了，最全适配实践指南奉上](https://cloud.tencent.com/developer/article/1706411?sharedUid=7774809)
@@ -37,11 +41,22 @@ categories: [腾讯云社区文章]
 
 > [SpringBoot多邮件源发送邮件](https://cloud.tencent.com/developer/article/1700441?sharedUid=7774809)
 
+> [Kubernetes系列学习文章 - 什么是容器云？(一)](https://cloud.tencent.com/developer/article/1420288?sharedUid=7774809)
+
+> [Kubernetes系列学习文章 - 什么是K8S？（二）](https://cloud.tencent.com/developer/article/1429218?sharedUid=7774809)
+
+> [Kubernetes系列学习文章 - 学习K8S的基础（三）](https://cloud.tencent.com/developer/article/1431406?sharedUid=7774809)
+
+> [Kubernetes系列学习文章 - Pod的深入理解（四）](https://cloud.tencent.com/developer/article/1443520?sharedUid=7774809)
+
+> [Kubernetes系列学习文章 - Pod YAML文件如何写（五）](https://cloud.tencent.com/developer/article/1478634?sharedUid=7774809)
+
+> [Kubernetes系列学习文章 - 如何理解编排（六）](https://cloud.tencent.com/developer/article/1484774?sharedUid=7774809)
 ----
 
 > [如何使用 Nextcloud 搭建个人网盘](https://cloud.tencent.com/developer/article/1356789?sharedUid=7868241)
 
-> [如何在小程序中实现 WebSocket 通信](如何在小程序中实现 WebSocket 通信)
+> [如何在小程序中实现 WebSocket 通信](https://cloud.tencent.com/developer/article/1700441?sharedUid=7868241)
 
 > [如何入门小程序开发](https://cloud.tencent.com/developer/article/1360040?sharedUid=7868241)
 
