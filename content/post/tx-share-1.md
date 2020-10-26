@@ -12,7 +12,6 @@ categories: [腾讯云社区文章]
 > [活动链接入口1](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7774809)
 > [活动链接入口2](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7868241)
 
-> [云+社区杂货摊](https://cloud.tencent.com/developer/grocery-stall?invitedUid=7774809)
 
 > [如何在容器服务中获取客户端真实源IP](https://cloud.tencent.com/developer/article/1721204?sharedUid=7774809)
 
