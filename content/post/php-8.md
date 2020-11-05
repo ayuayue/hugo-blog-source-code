@@ -232,4 +232,56 @@ function fix(TV|PC $it) ?:mixed {
 
 ### 7. match 表达式进行逻辑判断 -- 简化 switch
 
+**以前的版本**
+
+```php
+$name = 'd';
+switch ($name) {
+    case 'a':
+        //
+        break;
+    case 'b':
+    case 'c':
+        // 省略break则跟下个处理逻辑相同
+        break;
+    default:
+}
+```
+
+**新版本**
+
+```php
+$name = 'd';
+match($name){
+    'a' => 'A',
+    'b','c','d' => 'B',
+    default => 'Not Found'
+}
+```
+
+
+
 ### 8. 函数参数命名传递 -- 传递参数更随意.不在意默认值跟参数顺序
+
+**旧版本**
+
+```php
+function method($who,$when=now(),$do){
+    echo "$who $do at $when";
+}
+method('lisa',null,'Eat breakfast')
+```
+
+**新版本**
+
+```php
+function method($who,$when=now(),$do){
+    echo "$who $do at $when";
+}
+method(
+	who : 'lisa',
+    do : 'Eat breakfast'
+)	
+```
+
+**对比: ** 使用键值对的方式对应参数,可以忽略有默认值的参数和参数的顺序.更加简洁.
