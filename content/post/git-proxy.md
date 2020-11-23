@@ -49,7 +49,7 @@ git config  https.proxy https://127.0.0.1:1080
 
 ### `ssh`方式
 
-windows 平台配置
+`windows` 平台配置
 
 修改 `~/.ssh/config`文件,如果没有创建(没有后缀). 如果创建不了,请将 `.ssh` 文件夹的权限设置为当前用户完全控制.
 
@@ -57,8 +57,19 @@ windows 平台配置
 
 ```bash
 Host github.com
-ProxyCommand connect -H 127.0.0.1:7890 %h 22 #更改 7890 为你自己的本地代理端口
+ProxyCommand connect -H 127.0.0.1:7890 %h 22 #更改 7890 为你自己的本地socks5代理端口
 ```
+
+`linux`  配置
+
+同 `windwos` 但内容更改如下
+
+```bash
+Host github.com
+ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p #更改 7890 为你自己的本地socks5代理端口
+```
+
+
 
 ### 冲冲冲
 
