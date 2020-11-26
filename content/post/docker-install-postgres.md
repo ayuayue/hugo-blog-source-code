@@ -188,7 +188,7 @@ docker ps -a # 检查所有的容器，	exited说明已经停止，通过命令�
 docker start postgres-server
 ```
 
-此时发现，数据跟表都还在。所以容器的停止并不会丢失数据，现在我们将容器删除掉试试
+此时发现，数据跟表都还在。所以容器的停止并不会丢失数据，现在我们将容器删除掉试试，因为当前容器被创建后有自己的存储位置，而这些文件的生命周期是与 `docker` 容器相同的，即时被停止也依旧报存在容器中，当容器被销毁则数据也被删除。所以对于临时的应用使用默认的存储方式即可，对于要求数据的完整及稳定性的应用，应当使用持久化的方式进行报存。
 
 ```bash
 # 删除运行的容器会报错，首先将容器停止
@@ -197,7 +197,7 @@ docker rm postgres-server # 删除容器
 docker ps -a # 发现 postgres-server 没有了，说明删除成功。
 ```
 
-这次我们重新运行一个新容器，再次查看容器內数据，进而验证标题
+这次我们重新运行一个新容器，再次查看容器內数据，进而验证标题。
 
 ```bash
 docker run -d --name postgres-server -p 5432:5432 -e "POSTGRES_PASSWORD=progres"  postgres # 返回一串 id 说明运行成功
@@ -218,8 +218,22 @@ docker volume create pgdata
 2.  启动容器
 
 ```bash
-docker run -d --name postgres-server -v pgdata:/www/docker/volumes/pgdata -p 5432:5432 -e "POSTGRES_PASSWORD=root" postgres
-# -v 指定本地卷，用 /www/docker/volumes/pgdata 目录来盛放数据
+docker run -d --name postgres-server -v pgdata:/var/lib/postgresql/data -p 5432:5432 -e "POSTGRES_PASSWORD=root" postgres
+# -v 指定本地卷，用容器中的 /var/lib/postgresql/data 目录来盛放数据，因为这是 postgres 的数据存放文件，我们需要将这个文件映射到我们的主机上，实现持久化。
+docker volume inspect pgdata # 使用这个命令我们可以查看 pgdata 卷的详细信息
+# 一下是输出
+[
+    {
+        "CreatedAt": "2020-11-26T22:03:19+08:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/pgdata/_data",
+        "Name": "pgdata",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+# Mountpoint 就是我们主机上的目录，与 docker 容器共享，并且当容器被删除，主机上的数据依旧存在，我们可以在主机中查看 /var/lib/docker/volumes/pgdata/_data 文件中的内容，我们对此目录內进行文件的操作在容器中是会同步更新的。所以可以实现容器內数据库操作，删除容器数据保留。
 ```
 
 3.  测试持久化
@@ -241,11 +255,26 @@ docker rm postgres-server # 删除容器
 docker ps -a # 发现 postgres-server 没有了，说明删除成功。
 ```
 
-然后使用持久化的方式进行运行容器
+这时容器已经被删除了，但是我们发现主机上的文件依旧是存在的，所以我们运行新容器时指定这个卷就可以使用以前的数据了。
+
+然后使用指定卷持久化的方式进行运行容器
 
 ```bash
 docker run -d --name postgres-server -v pgdata:/www/docker/volumes/pgdata -p 5432:5432 -e "POSTGRES_PASSWORD=root" postgres
 ```
 
+哇塞，数据库跟文件又回来了 :smile:。 it 's :sunglasses:
 
+#### 删除持久化文件
 
+对数据进行持久化后，我们可能已经备份了数据，想要删除到主机上的文件，可以执行下面的命令
+
+在 `docker` 中 卷 `volume` 是一等公民，可以直接使用命令操作。
+
+```bash
+docker volume rm pgdata
+```
+
+这个时候主机上的目录也没有了，数据就被删除了。 :sweat:
+
+**我们如果需要使用持久化的方式复原一个容器是可以实现的，但是不要删除卷 `volume` 否则持久化的数据就会丢失。**
