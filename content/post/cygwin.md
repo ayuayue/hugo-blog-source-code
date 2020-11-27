@@ -23,7 +23,7 @@ categories: [windows]
 2. 配置安装的目录以及使用的用户.默认即可
 3. 配置本地包目录.默认即可
 4. 代理.默认即可
-5. use URL 使用镜像.可以选择阿里云的那个 `https://mirrors.aliyu.com
+5. use URL 使用镜像.可以选择阿里云的那个 `https://mirrors.aliyu.com`
 
 安装`linux`工具跟库
 
