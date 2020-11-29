@@ -2,7 +2,7 @@
 title: "Deepin 安装Postgres"
 date: 2020-11-24T23:44:35+08:00
 lastmod: 2020-11-24T23:44:35+08:00
-draft: true
+draft: false
 keywords: [Docker 安装Postgres]
 description: "Docker 安装Postgres"
 tags: [Docker]
@@ -87,7 +87,7 @@ psql -U dbuser -h 127.0.0.1 -p 5432 -d mydb # 登录验证
 1.  创建官方源配置文件
 
 ```bash
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt buster-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 ```
 
 2.  导入签名
