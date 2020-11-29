@@ -12,9 +12,10 @@ categories: [deepin]
 ### 下载 `Qv2ray`
 
 1.  从 [release](https://github.com/Qv2ray/Qv2ray/releases)  发布页下载适合自己电脑架构的可执行文件
+
 2.  从 `deepin` 的星火应用商店下载 [星火应用商店](https://www.spark-app.store/)
 
-![image-20201129194247739](/home/caoayu/.config/Typora/typora-user-images/image-20201129194247739.png)
+    ​	![](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201129212008.png)
 
 ### 配置 `v2ray` 核心
 
