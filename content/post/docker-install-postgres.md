@@ -1,10 +1,10 @@
 ---
-title: "Deepin 安装Postgres"
+title: "Deepin 安装Postgresql"
 date: 2020-11-24T23:44:35+08:00
 lastmod: 2020-11-24T23:44:35+08:00
 draft: false
-keywords: [Docker 安装Postgres]
-description: "Docker 安装Postgres"
+keywords: [Docker 安装Postgresql]
+description: "Docker 安装Postgresql"
 tags: [Docker]
 categories: [Docker]
 
