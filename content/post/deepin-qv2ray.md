@@ -33,8 +33,6 @@ categories: [deepin]
 
 1.  核心文件可执行文件路径
 
-![](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201129203217.png)
-
 2.  资源目录 -- 包含 `geoip.dat` 和 `geosite.dat` 的 **目录**
 
 ![](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/20201129203542.png)
