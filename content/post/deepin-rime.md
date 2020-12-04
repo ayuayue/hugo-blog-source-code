@@ -58,7 +58,7 @@ categories: [deepin]
 
 #### 配置增强包
 
-增强包包括了输入法配置文件跟词典文件与源配置文件，我们可以对比增强包的配置文件跟源文件，来修改为符合自己使用习惯的配置。还包括说明文件 增强包地址[百度云](https://pan.baidu.com/s/1jI1a8eE) [在线下载](https://www.caoayu.xyz/file/rime-pro.zip)
+增强包包括了输入法配置文件跟词典文件与源配置文件，我们可以对比增强包的配置文件跟源文件，来修改为符合自己使用习惯的配置。还包括说明文件 增强包地址[百度云](https://pan.baidu.com/s/1jI1a8eE) [在线下载](https://www.caoayu.xyz/file/rime_pro.zip)
 
 将压缩包解压到 `$user/.cofig/fcitx/rime/` 里，重新部署一下就好了。
 
