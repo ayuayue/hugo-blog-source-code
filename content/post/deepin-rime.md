@@ -19,7 +19,7 @@ categories: [deepin]
 
 `Mac` -- 鼠鬚管
 
-`Linux` -- 小狼毫
+`Linux` -- 中州韵
 
 鬼知道为什么起这么多名字 「手动滑稽」😅
 
