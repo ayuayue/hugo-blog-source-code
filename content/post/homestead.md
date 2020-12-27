@@ -102,7 +102,7 @@ ip : 192.168.10.10
 port : 3306
 name : homestead
 passwd : secret
-dbnane : homestead
+dbname : homestead
 ```
 
 4. 命令行 `ssh` 连接
