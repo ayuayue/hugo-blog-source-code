@@ -27,7 +27,7 @@ vagrant box add laravel/homestead
 vagrant box add laravel/homestead ~/Download/cdb...(下载的文件)
 ```
 
-然后使用命令 `vagrant list` 检查安装的 `box`
+然后使用命令 `vagrant box list` 检查安装的 `box`
 输出如下: `laravel/homestead (virtualbox, 0)` 后面的 `0` 为版本,可能是手动导入的缘故,没有正常的读取版本信息.
 
 #### 拉取 `homestead`
