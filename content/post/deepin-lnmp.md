@@ -54,6 +54,23 @@ sudo apt install php7.3-xml php7.3-curl php7.3-mbstring php7.3-xml
 # 如果还需要扩展可以使用 sudo apt install php7.3- 加Tab键自动提示所有的扩展，然后选择需要的扩展进行安装
 ```
 
+#### 如果仓库中没有需要的版本
+1. 首先更新下仓库
+```bash
+sudo apt update
+sudo apt upgrade
+```
+2. 添加存储仓库
+```bash
+sudo apt install software-properties-common 
+add-apt-repository ppa:ondrej/php
+sudo apt update
+```
+现在仓库中搜索就可以找到 `7.2` `7.3` 版本的 `php`
+```bash
+sudo apt install php7.2  # 安装同版本的模块使用 sudo apt install php7.2- tab键自动补全，根据提示安装扩展
+```
+
 ### `MYSQL`
 
 `deepin` 环境中看到社区很多反映的就是 `mysql` 的安装问题，要不然是版本太低，要不然是配置失败
