@@ -80,6 +80,8 @@ psql -U dbuser -h 127.0.0.1 -p 5432 -d mydb # 登录验证
 
 ### 使用 `postgres` 官方源安装 `postgres12`
 
+[官方所有linux安装方式](https://www.postgresql.org/download/)
+
 首先卸载旧版本或配置错误的版本
 
 `sudo apt remove postgresql --purge # purge 连同配置文件一起删除`
