@@ -57,9 +57,9 @@ url = "/about"
 
 
 [[menu.main]]
-name = "友情链接"
-identifier = "friends"
-url = "/about/friends"
+name = "其他链接"
+identifier = "links"
+url = "/about/links"
 parent = "about"
 weight = 300
 
