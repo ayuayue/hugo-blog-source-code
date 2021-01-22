@@ -51,7 +51,7 @@ categories: [Composer]
     }
 }
 ```
-并且生成了一个 `composer.lock` 文件及 `vender` 目录。打开 `vender` 目录，其中是项目依赖的包及包依赖的其他包的源码，还有一个自动加载文件 -- `autoload.php`
+并且生成了一个 `composer.lock` 文件及 `vendor` 目录。打开 `vendor` 目录，其中是项目依赖的包及包依赖的其他包的源码，还有一个自动加载文件 -- `autoload.php`
 
 
 ### **install and update 安装更新项目所有依赖**
@@ -69,6 +69,12 @@ categories: [Composer]
 #### **删除依赖**
 
 只需要修改 `composer.json` 文件的 `require` 中的包键值对，再进行 `composer update`即可删除依赖。
+
+命令删除
+
+```bash
+composer remove packageName # packageName 为要删除的包名
+```
 
 #### **composer.lock 文件**
 `composer.lock` 是通过 `composer` 进行安装或更新依赖后生成的一个文件，会记录上次操作的记录，如果改动了 `composer.json` 文件直接安装并不会生效，还会根据`composer.lock` 文件来安装，所以在第一次执行 `composer install` 后，如果更改了 `composer.json` 文件，需要使用 `composer update` 来更新 `composer.lock` 文件，才可以达到更新包依赖的目的
