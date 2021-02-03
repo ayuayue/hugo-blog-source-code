@@ -167,7 +167,7 @@ $usercontroller = new UserController();
 		"monolog/monolog": "^2.2"
 	},
 	"autoload": {
-		"psr-4": {"App\\":"app"}
+		"psr-4": {"App\\":"App"}
 	}
 }
 ```
