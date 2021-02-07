@@ -1,5 +1,5 @@
 ---
-title: "Composer (三) -- 自动加载"
+title: "Composer (三) -- Psr 自动加载"
 date: 2021-01-22T12:44:19+08:00
 lastmod: 2021-01-22T12:44:19+08:00
 draft: false
