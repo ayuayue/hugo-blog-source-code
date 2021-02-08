@@ -17,7 +17,7 @@ categories: [Deepin 升级后蓝牙消失问题]
 
 #### 一  使用工具软件
 
-首先开启 `buletooth` 服务，开启后在设置中会出现蓝牙模块，并且任务栏图标会显示出来。
+首先开启 `bluetooth` 服务，开启后在设置中会出现蓝牙模块，并且任务栏图标会显示出来。
 
 ```bash
 sudo service bluetooth start
@@ -31,7 +31,7 @@ sudo service bluetooth start
 ![image-20210207171646290](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210207171646290.png)
 
 3.  在开始菜单中找到系统助手
-4.  找到优化加速，开启 `buletooth` 的开机自启服务
+4.  找到优化加速，开启 `bluetooth` 的开机自启服务
 
 ![image-20210207171822060](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210207171822060.png)
 
