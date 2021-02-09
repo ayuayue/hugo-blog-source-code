@@ -21,8 +21,13 @@ sudo refind-install
 
 ```bash
 sudo apt remove refind --purge
-/boot/efi/EFI# rm -r refind
-/boot/efi/EFI# apt autoremove refind
-/boot# rm -f refind_linux.conf 
-/etc# rm -rf refind.d
+
+cd /boot/efi/EFI 
+sudo rm -r refind
+cd /boot/efi/EFI
+sudo apt autoremove refind
+cd /boot
+sudo rm -f refind_linux.conf 
+cd /etc
+sudo rm -rf refind.d
 ```
