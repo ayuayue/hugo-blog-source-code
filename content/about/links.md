@@ -46,3 +46,9 @@ comment: False
 | 算法动画 | https://www.cs.usfca.edu/~galles/visualization/Algorithms.html |
 | 星辰网 | http://cn.morningstar.com/main/default.aspx |
 | 打字游戏 | https://www.typing.com/ |
+
+### 在线api
+| 地址 | 描述 |
+| -- | -- |
+| 今日诗词 | https://www.jinrishici.com/?ref=hitokoto.cn |
+| 一言 | https://hitokoto.cn/ |
