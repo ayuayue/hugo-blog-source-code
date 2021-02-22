@@ -1,5 +1,5 @@
 ---
-title: "制作一个PHP简易框架 （五）-- 优化 response"
+title: "制作一个PHP简易框架（五）-- 优化 response"
 date: 2021-02-22T08:56:18+08:00
 lastmod: 2021-02-22T08:56:18+08:00
 draft: false
