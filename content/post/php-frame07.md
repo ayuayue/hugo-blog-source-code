@@ -19,7 +19,7 @@ categories: [php]
 
 [五 响应](https://www.caoayu.xyz/post/php-frame05)
 
-[六 视图](https://www.caoayu.xyz/post/06)
+[六 视图](https://www.caoayu.xyz/post/php-frame06)
 
 ---
 
