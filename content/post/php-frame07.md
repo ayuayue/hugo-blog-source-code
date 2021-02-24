@@ -107,3 +107,17 @@ if (!function_exists('storage_path')) {
 }
 ```
 
+更改引入时的路径。注意除了 `index.php` `bootstrap/core/app.php` 中的两个引入。
+
+```php
+# public/index.php
+require_once __DIR__ . '/../bootstrap/app.php'; # 整个框架的启动服务，此时还没有加载助手函数，所以这个不能更改
+```
+
+```php
+# bootstrap/core/app.php
+require_once __DIR__ . '/../vendor/autoload.php'; # 自动加载文件，也不能使用助手函数
+require_once base_path('bootstrap/core/container.php');
+require_once base_path('bootstrap/core/route.php');
+```
+
