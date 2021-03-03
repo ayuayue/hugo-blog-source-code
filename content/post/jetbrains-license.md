@@ -19,6 +19,16 @@ categories: [Jetbrains]
 2.  `github` 邮箱设置为公开。
 3.  `github` 项目创建并积极开发三个月以上。
 
+#### 给项目添加开源许可模板
+
+在项目首页创建新文件
+
+![image-20210303145008874](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210303145008874.png)
+
+文件名填写 `License` ，右侧出现模板，选择自己的开源协议。
+
+![image-20210303145108214](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210303145108214.png)
+
 #### 申请
 
 [申请地址](https://www.jetbrains.com/shop/eform/opensource?product=ALL)
