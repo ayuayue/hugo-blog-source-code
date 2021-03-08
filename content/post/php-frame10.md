@@ -9,7 +9,7 @@ tags: [php]
 categories: [php]
 ---
 
-![吴孟达](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170527%2Fb972760b8c124fc68fa076d273eb16a1_th.png&refer=http%3A%2F%2Fimg.mp.sohu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1617084896&t=5e4a257b09138bd85912227f69b5f7f7)
+![吴孟达](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/u=3251640371,1667245966&fm=26&gp=0.jpg)
 
 ----
 
