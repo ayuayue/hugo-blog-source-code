@@ -9,6 +9,7 @@ tags: [Chrome]
 categories: [Chrome]
 ---
 
+![chrome](https://images.pexels.com/photos/67112/pexels-photo-67112.jpeg?cs=srgb&dl=pexels-caio-67112.jpg&fm=jpg)
 有时候有在网页上截长图的需求，有很多的浏览器扩展和第三方软件提供了这个功能，今天介绍下使用 `Chrome` 自带的功能，理论所有 `Chrome` 内核的浏览器都能使用。
 
 打开浏览器，`f12` 进入开发者模式，使用快捷键 `Ctrl+shift+p` 呼出命令面板，输入 `full` 来过滤命令，找到一个 名叫 `Screenshot capture full size screenshot`  的那一项，点击后稍等一会就会生成一整图片保存到本地。
