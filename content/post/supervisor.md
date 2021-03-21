@@ -51,6 +51,7 @@ sudo apt install supervisor
 安装成功后会在 `/etc/supervisor` 下生成两个目录
 
 >   ├── conf.d
+>
 >   └── supervisord.conf
 
 ```conf
