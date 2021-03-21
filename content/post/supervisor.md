@@ -21,27 +21,64 @@ sudo apt install supervisor
 
 安装后自动安装 `supervisorctl` 工具，用来管理 `supervisord`  进程。
 
-输出 `supervisorctl` 帮助文档
+输出 `supervisorctl` 帮助文档 `supervisor help`：
 
->add             -- Activates any updates in config for process/group                                           
->avail           -- Display all configured processes                                                            
->clear           -- Clear single/multiple/all process log files                                                 
->fg              -- Connect to a process in foreground mode                                                     
->help            -- Show help                                                                                   
->maintail        -- tail of supervisor main log file                                                            
+>add             -- Activates any updates in config for process/group
+>
+>
+>avail           -- Display all configured processes   
+>
+>
+>clear           -- Clear single/multiple/all process log files   
+>
+>
+>fg              -- Connect to a process in foreground mode 
+>
+>
+>help            -- Show help   
+>
+>
+>maintail        -- tail of supervisor main log file     
+>
+>
 >open            -- Connect to a remote supervisord process. (for UNIX domain socket, use unix:///socket/path)  
->pid             -- Get the PID of process/supervisord                                                          
->quit      exit  -- Exit the supervisor shell                                                                   
->reload          -- Restart the remote supervisord                                                              
->remove          -- Removes process/group from active config                                                    
->reread          -- Reload the daemon's configuration files                                                     
->restart         -- Restart process, group or all                                                               
->shutdown        -- Shut the remote supervisord down                                                            
->start           -- Start process, group or all                                                                 
->status          -- Get process/group status info                                                               
->stop            -- Stop process, group or all                                                                  
->tail            -- tail of process stdout                                                                      
->update          -- Reload config and add/remove as necessary                                                   
+>
+>pid             -- Get the PID of process/supervisord   
+>
+>
+>quit      exit  -- Exit the supervisor shell                 
+>
+>
+>reload          -- Restart the remote supervisord        
+>
+>
+>remove          -- Removes process/group from active config        
+>
+>
+>reread          -- Reload the daemon's configuration files          
+>
+>
+>restart         -- Restart process, group or all                                   
+>
+>
+>shutdown        -- Shut the remote supervisord down                  
+>
+>
+>start           -- Start process, group or all                                  
+>
+>
+>status          -- Get process/group status info             
+>
+>
+>stop            -- Stop process, group or all                    
+>
+>
+>tail            -- tail of process stdout                         
+>
+>
+>update          -- Reload config and add/remove as necessary      
+>
+>
 >version         -- Show the version of the remote supervisord process                                          
 
 
