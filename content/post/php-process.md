@@ -1,5 +1,5 @@
 ---
-title: "Php 进程知识"
+title: "PHP 进程知识"
 date: 2021-09-01T22:48:50+08:00
 lastmod: 2021-09-01T22:48:50+08:00
 draft: false
@@ -189,3 +189,145 @@ fprintf(STDOUT,"process exit %d\n",getmypid());
 ```
 
 此时运行该脚本，子进程退出后会被父进程回收，可以使用上面的 pstree ps 命令查看，只有父进程一个，并且子进程的进程目录也是不存在的。
+
+### 进程退出
+
+使用 pcntl_wait() 获取进程退出的状态码，一般 0-255，,0 为正常退出，可以使用 exit(10) 自定以退出状态码。
+
+pcntl_wait() 还可以释放退出的子进程的资源
+
+非阻塞式退出：
+
+加入第二个参数 WNOHANG 
+
+`pcntl_wait($status,WNOHANG);`
+
+```php
+<?php
+$pid = pcntl_fork();
+if($pid < 0){
+    fprintf(STDOUT,'fork failed ');
+    exit($pid);
+}
+if($pid === 0){
+//    while (1){
+        fprintf(STDOUT,"i am child %d \n",getmypid());
+        sleep(3);
+//    }
+    exit(10);
+}
+while(1){
+    fprintf(STDOUT,"i am father %d \n",getmypid());
+    $exitCode = pcntl_wait($status,WNOHANG);
+    if($exitCode > 0 ){
+        fprintf(STDOUT,"child %d exit status %d \n",$pid,pcntl_wexitstatus($status));
+        exit($status);
+    }else if ($exitCode === 0){
+        sleep(5);
+        fprintf(STDOUT,"father pid %d \n",getmypid());
+    }else{
+        fprintf(STDOUT,"child exit failed \n");
+    }
+}
+```
+
+使用 pcntl_wexitstatus 函数来获取子进程的退出状态码。
+
+如果阻塞，子进程会一直运行，父进程运行到 wait 函数时阻塞，直到子进程运行结束。
+
+如果非阻塞，父进程不会等待子进程执行结束，而是同时运行，如果捕捉到进程退出，退出状态码 大于0
+
+#### 追踪阻塞与非阻塞方式退出
+
+使用 strace 命令进程系统调用的追踪
+
+```bash
+strace -f -s 65500 -i -T php process_exit.php	
+```
+
+#### 使用 kill 命令终止程序
+
+kill 命令会发送一个信号给程序，每个信号都有一个名字和编号。使用 kill -l 可以查看所有的信号
+
+```bash
+caoayu@caoayu:~/Desktop/code/php/muti-process$ kill -l
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+ 6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX
+```
+
+```php
+<?php
+$pid = pcntl_fork();
+if($pid < 0){
+    fprintf(STDOUT,'fork failed ');
+    exit($pid);
+}
+if($pid === 0){
+    while (1){
+        fprintf(STDOUT,"i am child %d \n",getmypid());
+        sleep(3);
+    }
+}
+while(1){
+    fprintf(STDOUT,"i am father %d \n",getmypid());
+    $exitPID = pcntl_wait($status,WNOHANG);
+    fprintf(STDOUT,"exit process pid  %d\n",$exitPID);
+    if($exitPID > 0 ){
+        if(pcntl_wifsignaled($status)){
+            fprintf(STDOUT,"rec exit  sign %d \n ",pcntl_wtermsig($status));
+        }
+        if(pcntl_wexitstatus($status)){
+            fprintf(STDOUT,"child %d exit status %d \n",$pid,pcntl_wexitstatus($status));
+        }
+    }else if ($exitPID === 0){
+        sleep(5);
+        fprintf(STDOUT,"father pid %d \n",getmypid());
+    }
+        sleep(5);
+}
+
+```
+
+不退出子进程和父进程，使用 kill 命令结束子进程，查看程序运行状况。
+
+使用 中断信号结束后，需要使用 pcntl_wtermsig 函数来获取终端信号的值
+
+```bash
+kill -10 1002
+kill -9 1003
+```
+
+可以看到子进程被终止，父进程仍然在运行，并且获取到了信号的类型
+
+![image-20210905215243703](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905215243703.png)
+
+![image-20210905215358036](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905215358036.png)
+
+#### 进程的停止
+
+pcntl_wstopsig 函数捕获进程的停止信号
+
+```php
+pcntl_wstopsig($status)
+```
+
+pcntl_wifstopped 函数可以获取到进程停止信号
+
+一般接收 SIGSTOP, SIGSTP 这几个信号，其他信号无法使用 pcntl_wifstopped 函数捕获到。
+
+进程停止后，仍然可以使用 pstree,ps 等命令查询到，进程并没有终止，只是暂时停止，可以发送 继续  中断信号来将进程重新唤醒。
+
+![image-20210905220223336](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905220223336.png)
+
+![image-20210905220244428](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/image-20210905220244428.png)
