@@ -1,5 +1,5 @@
 ---
-title: "Php 程序"
+title: "PHP 程序"
 date: 2021-09-01T22:49:34+08:00
 lastmod: 2021-09-01T22:49:34+08:00
 draft: false
@@ -66,5 +66,12 @@ PHP 解释器如何解析 PHP 脚本
 #!/home/caoayu/software/php/bin/php
 <?php
 echo time();
+```
+
+运行
+
+```
+chmod a+x sh.php
+./sh.php
 ```
 
