@@ -187,3 +187,80 @@ systemctl start iptables
 systemctl enable iptables
 ```
 
+## 创建服务
+
+```Bash
+vim /usr/lib/systemd/system/frps.service
+
+[Unit]
+Description=frps
+After=network.target
+ 
+[Service]
+TimeoutStartSec=30
+ExecStart=/usr/local/bin/frps -c /etc/frp/frps.ini
+ExecStop=/bin/kill $MAINPID
+ 
+[Install]
+WantedBy=multi-user.target
+
+
+systemctl enable frps
+systemctl start frps
+systemctl status frps
+
+# systemctl enable frps.service
+```
+
+## 虚拟机扩容
+
+1. vmware 扩容
+
+需要删除所有快照
+
+![img](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/202109211704330.png)
+
+1. 进入linux 查看磁盘信息
+
+df -h 查看磁盘信息
+
+ls /dev/  查看设备信息 | fdisk -l
+
+1. 对磁盘进行分区
+
+fdisk /dev/sda
+
+n 新建
+
+p 主分区
+
+完成后 w 保存 ,重启
+
+1. 扩容
+
+查看磁盘信息 fdisk -l
+
+查看卷信息   vgdisplay
+
+创建物理卷    pvcreate /dev/sda3
+
+扩展到物理卷    vgextend centos_caoayu /dev/sda3
+
+再次查看卷信息,发现有 free 空间
+
+扩展    lvextend -L +50G /dev/mapper/centos_caoayu-root
+
+查看 pvdisplay  发现多出一个
+
+1. 扩容文件系统
+
+resize2fs /dev/mapper/centos_caoayu-root
+
+1. 使用 df-h  查看容量是否扩容成功
+
+## 常用软件及库
+
+```Bash
+yum install tree -y \
+yum install 
+```
