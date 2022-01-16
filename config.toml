@@ -1,7 +1,8 @@
 baseURL = "https://www.caoayu.xyz"
 languageCode = "en"
 defaultContentLanguage = "zh-cn" # en / zh-cn / ... (This field determines which i18n file to use)
-title = "曹阿宇-个人博客"
+title = "个人内容记录"
+# title = "曹阿宇-个人博客"
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 enableEmoji = true
@@ -15,7 +16,7 @@ pygmentsCodefencesGuessSyntax = true
 hasCJKLanguage = true # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
 paginate = 15 # 首页每页显示的文章数
 googleAnalytics = "UA-163761428-1" # UA-XXXXXXXX-X
-copyright = "豫ICP备19012822号-2" # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "<a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-2</a>" # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author] # essential                     # 必需
 name = "Caoayu"
@@ -81,10 +82,11 @@ weight = 100
 version = "4.x" # Used to give a friendly message when you have an incompatible update
 debug = false
 since = "2020"
-logoTitle = "Caoayu"
+# logoTitle = "Caoayu"
+logoTitle = "个人内容记录"
 LogoImg = "/images/jay.jpg" # default: the title value    # 默认值: 上面设置的title值
 keywords = ["php", "golang", "linux", "windows"]
-description = "分享知识，分享生活，个人博客，程序，人生，哲学"
+description = "分享知识，分享生活，个人，程序，人生，哲学"
 # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
 archivePaginate = 30
 # show 'xx Posts In Total' in archive page ?            # 是否在归档页显示文章的总数
@@ -139,8 +141,8 @@ hint = 30 # Display hint if the last modified time is more than these days ago. 
 warn = 180 # Display warning if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示警告
 
 [params.utterances]
-owner = "ayuayue"
-repo = "blogtalk"
+# owner = "ayuayue"
+# repo = "blogtalk"
 
 [params.busuanzi]
 enable = true
