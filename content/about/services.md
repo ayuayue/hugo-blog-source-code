@@ -7,6 +7,6 @@ comment: false
 
 [在线邮件系统](http://caoayu.xyz:3001/)
 
-[在线屏幕共享](https://www.caoayu.xyz:5050)
+[在线屏幕共享](https://blog.caoayu.top:5050)
 
-[gotour 官方 golang 教程](http://www.caoayu.xyz:3999)
+[gotour 官方 golang 教程](http://blog.caoayu.top:3999)

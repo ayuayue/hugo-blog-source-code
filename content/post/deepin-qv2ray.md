@@ -23,7 +23,7 @@ categories: [deepin]
 
 [下载地址](https://hub.fastgit.org/v2fly/v2ray-core/releases) ,同样的找到自己电脑架构的包下载.这里我下载的是 `v2ray-linux-64.zip` 
 
-下载太慢可以使用这个,我上传的原文件[链接](https://www.caoayu.xyz/file/v2ray-linux-64.zip)
+下载太慢可以使用这个,我上传的原文件[链接](https://blog.caoayu.top/file/v2ray-linux-64.zip)
 
 #### 配置路径
 

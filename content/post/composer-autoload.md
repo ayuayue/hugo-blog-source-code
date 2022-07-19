@@ -11,9 +11,9 @@ categories: [Composer]
 
 ## **自动加载**
 
-[composer (一) -- 依赖管理](https://www.caoayu.xyz/post/composer/) 前面这篇文章介绍了 `composer` 对依赖的安装及更新。
+[composer (一) -- 依赖管理](https://blog.caoayu.top/post/composer/) 前面这篇文章介绍了 `composer` 对依赖的安装及更新。
 
-[composer (二) -- 第三方包使用](https://www.caoayu.xyz/post/composer-use-class/) 这篇文章记录了如何使用一个第三方类。
+[composer (二) -- 第三方包使用](https://blog.caoayu.top/post/composer-use-class/) 这篇文章记录了如何使用一个第三方类。
 
 这次介绍下 `composer` 的自动加载机制。
 

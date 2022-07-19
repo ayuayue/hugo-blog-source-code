@@ -55,16 +55,16 @@ categories: [hexo]
 /*
  * created_at 2020-05-25
  * created_by caoayu
- * myBlog https://www.caoayu.xyz
+ * myBlog https://blog.caoayu.top
  */
 //baidu push api
 //https://ziyuan.baidu.com/linksubmit/index 这里提供的 api 接口,普通收录,主动提交,php代码
-$api = 'http://data.zz.baidu.com/urls?site=https://www.caoayu.xyz&token=xxxxx';
+$api = 'http://data.zz.baidu.com/urls?site=https://blog.caoayu.top&token=xxxxx';
 
 
 //get site urls
 function GetUrls($api):string{
-    $site = "https://www.caoayu.xyz/sitemap.xml";
+    $site = "https://blog.caoayu.top/sitemap.xml";
     //获取 xml 信息
     $XmlUrls = curl($site,null);
     //将 xml 转为数组
@@ -76,7 +76,7 @@ function GetUrls($api):string{
      *      [tag] => LOC
             [type] => complete
             [level] => 3
-            [value] => https://www.caoayu.xyz/scp01/
+            [value] => https://blog.caoayu.top/scp01/
        所以筛选出所有 tag = LOC 的 value 值 即为我们需要上传的 链接地址
      */
     //$urlArr 即为接受所有 url 的数组

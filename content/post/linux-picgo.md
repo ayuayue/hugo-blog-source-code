@@ -26,7 +26,7 @@ picgo -h # 帮助
 
 但是可能会上传失败，因为默认使用的是 `smss` 的图床。应该是要设置 `token` 等。所以我们使用 `github` 的图床来做，可以更好的对原图进行一个管理。
 
-修改配置文件 `~/.picgo/config.json` ，如果不太清楚可以对比 [这篇文章的图形化的配置信息](https://www.caoayu.xyz/post/cdn-jsdelivr/)
+修改配置文件 `~/.picgo/config.json` ，如果不太清楚可以对比 [这篇文章的图形化的配置信息](https://blog.caoayu.top/post/cdn-jsdelivr/)
 
 ```json
 {
@@ -93,7 +93,7 @@ picgo -h # 帮助
 
 #### 配置后
 
-配置后使用命令就可以直接上传图片到 `GitHub` 图床了 ，如果上传失败，查看日志是什么问题，日志文件在 `~/.picgo/picgo.log` 。最好上传时配置好 `git` 代理，以免由于国内网络问题，导致上传失败。关于配置 `git` 代理 https://www.caoayu.xyz/post/git-proxy/
+配置后使用命令就可以直接上传图片到 `GitHub` 图床了 ，如果上传失败，查看日志是什么问题，日志文件在 `~/.picgo/picgo.log` 。最好上传时配置好 `git` 代理，以免由于国内网络问题，导致上传失败。关于配置 `git` 代理 https://blog.caoayu.top/post/git-proxy/
 
 ----
 

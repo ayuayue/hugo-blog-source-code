@@ -58,5 +58,5 @@ categories: [Windows]
 
 可以使用 `diskgenius` 进行更高级的操作
 
-比如 :  [使用diskgenius合并分区](https://www.caoayu.xyz/post/disk-dilation/)
+比如 :  [使用diskgenius合并分区](https://blog.caoayu.top/post/disk-dilation/)
 

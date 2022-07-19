@@ -27,7 +27,7 @@ categories: [Windows]
 
 ----
 
-### [windows自带磁盘管理器的使用](https://www.caoayu.xyz/post/win-disk-manage/)
+### [windows自带磁盘管理器的使用](https://blog.caoayu.top/post/win-disk-manage/)
 
 ### 使用 `diskgenius`扩容
 

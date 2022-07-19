@@ -217,7 +217,7 @@ export PATH=`echo $PATH | sed 's/:\/mnt\/d\/[^:]*//g'` # 替换d盘的环境变�
 
 当然上面的小工具有些也是可以使用的,比如, `figlet` , `cowsay` `z`
 
-**建议** 不推荐使用 `cmd,powershell` ,除非你是一个 `Windows` 开发者.可以根据[这篇文章](https://www.caoayu.xyz/post/homestead/#优化-git-bash-使用)来简单的配置 `git-bash`,使用 `git-bash` 来操作 `Windows` 的命令
+**建议** 不推荐使用 `cmd,powershell` ,除非你是一个 `Windows` 开发者.可以根据[这篇文章](https://blog.caoayu.top/post/homestead/#优化-git-bash-使用)来简单的配置 `git-bash`,使用 `git-bash` 来操作 `Windows` 的命令
 
 上面的小工具有些不好找,推荐使用 `Windows` 下的包管理工具来安装  ---  `scoop`
 

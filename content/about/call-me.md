@@ -6,7 +6,7 @@ comment: false
 
 [GitHub](https://github.com/ayuayue)
 
-[我的微信](https://www.caoayu.xyz/images/wechat.jpg)
+[我的微信](https://blog.caoayu.top/images/wechat.jpg)
 
 [我的 QQ pc 端](tencent://message/?uin=1401262639&Site=http://vps.shuidazhe.com&Menu=yes)
 

@@ -11,7 +11,7 @@ categories: [git]
 
 ### `Git` clone 太慢
 
-国内大部分的`git`速度还是挺慢的,前面也提到过使用 [镜像或下载站](https://www.caoayu.xyz/post/github-fast/)的方式来加速.
+国内大部分的`git`速度还是挺慢的,前面也提到过使用 [镜像或下载站](https://blog.caoayu.top/post/github-fast/)的方式来加速.
 
 这次通过配置`git` 的代理方式来加速
 

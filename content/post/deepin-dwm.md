@@ -75,7 +75,7 @@ TryExec=/usr/bin/dwm # dwm安装路径
 
 ### 推荐补丁
 
-手动编译安装的 `dwm` 是没有什么额外的功能的，需要通过打补丁来新增功能。关于补丁的安装，跟前面的 `st` 是相同的。[st](https://www.caoayu.xyz/post/st/)
+手动编译安装的 `dwm` 是没有什么额外的功能的，需要通过打补丁来新增功能。关于补丁的安装，跟前面的 `st` 是相同的。[st](https://blog.caoayu.top/post/st/)
 
 1.  `dmune` 一个快捷搜索程序的窗口，默认快捷键是 `alt+p` 。 地址：https://tools.suckless.org/dmenu/
 

@@ -1,4 +1,4 @@
-baseURL = "https://www.caoayu.xyz"
+baseURL = "https://blog.caoayu.top"
 languageCode = "en"
 defaultContentLanguage = "zh-cn"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "曹阿宇-个人博客"

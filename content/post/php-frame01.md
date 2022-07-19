@@ -23,25 +23,25 @@ categories: [php]
 
 项目地址：https://github.com/ayuayue/php-frame
 
-[制作一个PHP简易框架(一)--准备工作](https://www.caoayu.xyz/post/php-frame01)
+[制作一个PHP简易框架(一)--准备工作](https://blog.caoayu.top/post/php-frame01)
 
-[制作一个PHP简易框架(二)-- 引入容器](https://www.caoayu.xyz/post/php-frame02)
+[制作一个PHP简易框架(二)-- 引入容器](https://blog.caoayu.top/post/php-frame02)
 
-[制作一个PHP简易框架(三)-- 信息调试](https://www.caoayu.xyz/post/php-frame03)
+[制作一个PHP简易框架(三)-- 信息调试](https://blog.caoayu.top/post/php-frame03)
 
-[制作一个PHP简易框架(四)-- 路由系统](https://www.caoayu.xyz/post/php-frame04)
+[制作一个PHP简易框架(四)-- 路由系统](https://blog.caoayu.top/post/php-frame04)
 
-[制作一个PHP简易框架（五）-- 响应](https://www.caoayu.xyz/post/php-frame05)
+[制作一个PHP简易框架（五）-- 响应](https://blog.caoayu.top/post/php-frame05)
 
-[制作一个PHP简易框架（六）-- 视图模板](https://www.caoayu.xyz/post/php-frame06)
+[制作一个PHP简易框架（六）-- 视图模板](https://blog.caoayu.top/post/php-frame06)
 
-[制作一个PHP简易框架（七）-- 路由及路径优化](https://www.caoayu.xyz/post/php-frame07)
+[制作一个PHP简易框架（七）-- 路由及路径优化](https://blog.caoayu.top/post/php-frame07)
 
-[制作一个PHP简易框架（八）-- 配置中心](https://www.caoayu.xyz/post/php-frame08)
+[制作一个PHP简易框架（八）-- 配置中心](https://blog.caoayu.top/post/php-frame08)
 
-[制作一个PHP简易框架（九）-- ORM](https://www.caoayu.xyz/post/php-frame09)
+[制作一个PHP简易框架（九）-- ORM](https://blog.caoayu.top/post/php-frame09)
 
-[制作一个PHP简易框架（十）-- Session and Cookie](https://www.caoayu.xyz/post/php-frame10)
+[制作一个PHP简易框架（十）-- Session and Cookie](https://blog.caoayu.top/post/php-frame10)
 
 ----
 
@@ -72,7 +72,7 @@ php -S localhost:9527 -t index.php # -t 为单文件路径，默认为当前目�
   }
 }
 ```
-5. 生成自动加载文件,会生成 `vendor` 目录及自动加载文价。[自动加载系列文章](https://www.caoayu.xyz/post/composer-autoload/)
+5. 生成自动加载文件,会生成 `vendor` 目录及自动加载文价。[自动加载系列文章](https://blog.caoayu.top/post/composer-autoload/)
 ```bash
 composer dump-autoload -o # -o 优化参数
 ```

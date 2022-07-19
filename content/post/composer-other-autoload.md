@@ -9,7 +9,7 @@ tags: [Composer]
 categories: [Composer]
 ---
 
-[composer 自动加载](https://www.caoayu.xyz/post/composer-autoload/) 这篇写了自动加载及自定义类使用 `psr4` 加载。下面介绍下另两种自动加载的方式。1. `classmap`. 2 `files`
+[composer 自动加载](https://blog.caoayu.top/post/composer-autoload/) 这篇写了自动加载及自定义类使用 `psr4` 加载。下面介绍下另两种自动加载的方式。1. `classmap`. 2 `files`
 
 ### `classmap` 方式
 

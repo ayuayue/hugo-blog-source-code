@@ -115,7 +115,7 @@ composer update --no-dev
 
 ### **使用composer创建项目**
 
-如果没有配置 `composer` 的国内源，安装依赖会比较慢，[配置阿里云源](https://www.caoayu.xyz/post/composer-source/)
+如果没有配置 `composer` 的国内源，安装依赖会比较慢，[配置阿里云源](https://blog.caoayu.top/post/composer-source/)
 
 使用 `composer init` 只会初始化出一个 `composer.json` 文件，并不会创建文件及项目。使用`composer` 也可以直接创建一个项目，如 `laravel tp` 等框架现在大部分都支持。
 

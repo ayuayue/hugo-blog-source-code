@@ -44,7 +44,7 @@ categories: [路由器]
 
 **我的k2固件版本为：22.6.512.75**
 
-这个固件的版本还是比较新的，当时我刷的时候还要降级在刷 `breed` 现在的工具已经不需要降级了，直接傻瓜式刷入。[教程](https://www.ittel.cn/archives/1651.html) 如果是`Windows`下载的文件可能会报病毒，需要先把杀毒软件关掉。也可以在此处[下载](https://www.caoayu.xyz/file/breed_web.zip) 下载后可以根据贴子先判断 hash 值一致不一致。我这里对比过是一致的。防止被被人篡改植入病毒。
+这个固件的版本还是比较新的，当时我刷的时候还要降级在刷 `breed` 现在的工具已经不需要降级了，直接傻瓜式刷入。[教程](https://www.ittel.cn/archives/1651.html) 如果是`Windows`下载的文件可能会报病毒，需要先把杀毒软件关掉。也可以在此处[下载](https://blog.caoayu.top/file/breed_web.zip) 下载后可以根据贴子先判断 hash 值一致不一致。我这里对比过是一致的。防止被被人篡改植入病毒。
 
 以管理员方式进行打开 `路由器刷breed web控制台助手.exe` 
 
@@ -58,7 +58,7 @@ categories: [路由器]
 
 所有k2可以用的固件地址 ： 链接: https://pan.baidu.com/s/1uBfdmxDgPeT5UasMkXumzg  密码: nj0i
 
-我现在使用的固件是潘多拉 稳定本2017的固件 [链接](https://www.caoayu.xyz/file/PandoraBox-ralink-mt7620-phicomm-k2-2017-01-03-gi.bin) 比较简洁，没有去广告跟多播`ssr`什么的
+我现在使用的固件是潘多拉 稳定本2017的固件 [链接](https://blog.caoayu.top/file/PandoraBox-ralink-mt7620-phicomm-k2-2017-01-03-gi.bin) 比较简洁，没有去广告跟多播`ssr`什么的
 
 ### 进入breed
 

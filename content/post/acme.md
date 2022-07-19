@@ -11,7 +11,7 @@ categories: [web]
 
 ### 宝塔申请`let's encrypt`
 
-#### [给hexo申请证书并设置https](https://www.caoayu.xyz/post/hexo-04/)
+#### [给hexo申请证书并设置https](https://blog.caoayu.top/post/hexo-04/)
 
 在上面这篇文章中介绍了使用宝塔快速给网站申请`https`证书并布置到网站上面,但是证书只有3个月的有效期,昨天发现到期后并没有续签成功,打开计划任务的日志发现由于`python`环境配置除了问题
 
@@ -77,7 +77,7 @@ server
 {
     listen 80;
 	listen 443 ssl http2;
-    server_name caoayu.xyz www.caoayu.xyz;
+    server_name caoayu.xyz blog.caoayu.top;
     index index.php index.html index.htm default.php default.htm default.html;
     root /xxx; #站点目录
     
@@ -91,9 +91,9 @@ server
         rewrite ^(/.*)$ https://$host$1 permanent;
     }
     #HTTP_TO_HTTPS_END
-    ssl_certificate    /root/.acme.sh/www.caoayu.xyz/fullchain.cer;
-    ssl_certificate_key    /root/.acme.sh/www.caoayu.xyz/www.caoayu.xyz.key;
-    ssl_trusted_certificate /root/.acme.sh/www.caoayu.xyz/ca.cer;
+    ssl_certificate    /root/.acme.sh/blog.caoayu.top/fullchain.cer;
+    ssl_certificate_key    /root/.acme.sh/blog.caoayu.top/blog.caoayu.top.key;
+    ssl_trusted_certificate /root/.acme.sh/blog.caoayu.top/ca.cer;
     ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
     ssl_prefer_server_ciphers on;
@@ -114,7 +114,7 @@ server
     {
         expires      30d;
         access_log /dev/null;
-        valid_referers none blocked www.caoayu.xyz caoayu.xyz;
+        valid_referers none blocked blog.caoayu.top caoayu.xyz;
         if ($invalid_referer){
            return 404;
         }

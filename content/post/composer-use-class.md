@@ -9,7 +9,7 @@ tags: [Composer]
 categories: [Composer]
 ---
 
-[composer 依赖管理](https://www.caoayu.xyz/post/composer/)  这篇文章写了对于第三方包的安装及使用，以及 `composer` 项目配置文件的说明，接下来说说 `composer` 安装第三方包后的使用。
+[composer 依赖管理](https://blog.caoayu.top/post/composer/)  这篇文章写了对于第三方包的安装及使用，以及 `composer` 项目配置文件的说明，接下来说说 `composer` 安装第三方包后的使用。
 
 首先，以 `monolog` 这个包为例。[github地址](https://github.com/seldaek/monolog)
 
@@ -54,7 +54,7 @@ php log.php
 require_once 'vendor/autoload.php';
 ```
 
-核心就是引入了自动加载文件，而这个文件会帮我们将所有的类找到并在使用时调用。[关于自动加载](https://www.caoayu.xyz/post/composer-autoload/)
+核心就是引入了自动加载文件，而这个文件会帮我们将所有的类找到并在使用时调用。[关于自动加载](https://blog.caoayu.top/post/composer-autoload/)
 
 一般在安装依赖或者更新 `composer.json` 文件后，会自动更新自动加载文件
 
