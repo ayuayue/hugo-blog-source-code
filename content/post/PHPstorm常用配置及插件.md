@@ -1,7 +1,7 @@
 ---
 cssclass:
 title: PHPstorm常用配置及插件
-tags: IT/PHPStorm 
+tags: [IT/PHPStorm]
 image-auto-upload: true
 date: 2022-10-03 20:36:46
 lastmod: 2022-10-25 08:54:51
