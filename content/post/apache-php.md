@@ -1,178 +1,155 @@
 ---
-title: "Apache + php 配置"
-date: 2021-09-12T16:08:50+08:00
-lastmod: 2021-09-12T16:08:50+08:00
-draft: false
-keywords: []
-description: ""
-tags: []
-categories: []
+cssclass:
+title: apache-php
+tags: [IT/Centos, IT/Apache, IP/PHP, IT/Linux]
+image-auto-upload: true
+date: 2022-10-03 20:46:46
+lastmod: 2022-10-25 08:57:46
 ---
-
-使用 apache + php 来作为服务器解析 php 脚本的话,需要 `libphp5 的一个库文件, 这个库文件需要编译安装 php 的时候   `--with-apxs2=/usr/local/apache2/bin/apxs` 将会在 apache 的 modules 目录中生成 libphp 的库文件并在 httpd.conf 文件中开启配置
-
-### 安装前
-
-编译安装 apache 需要 先 安装 `APR APR_Util PCRE GCC GCC-C++ ` 等包.
-
-```bash
-yum install expat-devel -y
-```
-
-#### 编译安装 APR
-
-```bash
-wget http://archive.apache.org/dist/apr/apr-1.5.2.tar.gz
-tar -zxvf  apr-1.5.2.tar.gz
-cd apr-1.5.2/
-./configure --prefix=/usr/local/apr
-make && make install
-```
-
-#### 编译安装 APR-Util
-
-```bash
-wget http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.gz
-tar -zxvf apr-util-1.5.4.tar.gz
-cd apr-util-1.5.4/
-
-./configure --prefix=/usr/local/apr-util \
--with-apr=/usr/local/apr/bin/apr-1-config
-
-make && make install
-```
-
-#### 编译安装 pcre-conf
-
-```bash
-wget https://sourceforge.net/projects/pcre/files/pcre/8.39/pcre-8.39.tar.gz
-tar -zxvf pcre-8.39.tar.gz
-cd pcre-8.39
-./configure --prefix=/usr/local/pcre
-make && make install
-```
-
-### 进入正题,编译 apache
-
-```bash
-wget http://archive.apache.org/dist/httpd/httpd-2.4.23.tar.gz
-tar -zxvf httpd-2.4.23.tar.gz
-cd httpd-2.4.23
-
-./configure --prefix=/usr/local/apache2 \
---with-apr=/usr/local/apr \
---with-apr-util=/usr/local/apr-util/ \
---with-pcre=/usr/local/pcre
-```
-
-#### 配置环境变量,及软连接,适应多版本 apache
-
-1. 修改 .bashrc 加入
+# apache-php
+### 基础软件及apache
 
 ```Bash
+yum install wget -y
+# mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+# wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+yum makecache
+
+yum install epel-release \ 
+
+yum install expat expat-devel sqlite-devel libpng libpng-dev \
+libxml2 libxml2-devel libzip libzip-devel apr apr-devel pcre pcre-devel \
+apr-util apr apr-devel apr-util-devel libmcrypt libmcrypt-devel \
+telnet freetype freetyp-devel libzip libzip-devel t1lib t1lib-devel \
+psmisc tree oniguruma oniguruma-devel libjpeg-turbo libjpeg-turbo-devel \
+gcc g++ make automake vim file bison bison-devel
+
+yum grouplist | more
+#yum  groupinstall Development tools
+rpm ql apr-util 
+
+cd /usr/src/httpd-2.4.48
+./configure --prefix=/usr/local/apache2 \
+ --with-apr=/usr/bin \
+ --with-apr-util=/usr/bin \
+ --with-pcre=/usr/bin/pcre-config \
+ --enable-so
+ 
+vim .bashrc
+ 
 export APACHE="/usr/local/apache"
 export PHP="/usr/local/php"
 export PATH="${HOME}/bin:${HOME}/.g/go/bin:$PATH:$APACHE/bin:$PHP/bin"
-```
 
-可以看到 编译时配置的路径是 apache2 ,而环境变量是 apache, php
-
-所以我们在环境中保留一个版本的软件,名称并不带版本号.
-
-1. 创建软连接
-
-```Bash
+source .bashrc
 ln -s /usr/local/apache2 /usr/local/apache
+cp /usr/local/apache2/conf/httpd.conf /usr/local/apache2/conf/httpd.conf.bak
+cp /usr/local/apache2/conf/extra/httpd-vhosts.conf httpd-vhosts.conf.bak
+
 ```
 
-这样,系统的apache环境就变成了 2, 如果编译安装了 1 版本的,那么用 1 的生成软连接即可.
-
-同理, PHP及其他软件相同
-
-1. 刷新 ` source ~/.bashrc`
-2. 检查 `apchectl  httpd` 命令 的 -v 参数如果输出了版本信息那么就 OK了 😎
-
-#### 备份并修改配置文件
-
-备份
-
-```bash
-cp /usr/local/apache2/conf/httpd.conf /usr/local/apache2/conf/http.conf.bak
-```
-
-修改
-
-```bash
-vim ...apache2/etc/httpd.conf
-
-#ServerName www.example.com:80
-ServerName 0.0.0.0:80
-```
-
-#### 启动暂停重启
-
-```bash
-apacheclt stop | start | restart | status
-
-httpd
-```
-
-#### 检测配置文件是否正确
-
-```bash
-httpd -t
-apachectl -t
-```
-
-启动后访问虚拟机的 80 端口返回 it works
-
-### 编译安装 php
-
-至于下载,可以到官网下载 常用的版本  `5.6  7.0  7.4`  http://www.php.net/downloads.php
+### php
 
 ```Bash
-cd php-5.6.40/
 
+cd php-5.6.40
 ./configure --prefix=/usr/local/php56 \
-                                --with-apxs2=/usr/local/apache2/bin/apxs \
-                                --with-mysql=mysqlnd \
-                                --with-gd \
-                                --without-pear \
-                                --disable-phar
-                                
- make && make install
+--with-config-file-path=/usr/local/php56/etc \
+--with-apxs2=/usr/local/apache2/bin/apxs \
+--with-mcrypt \
+--enable-calendar \
+--enable-ftp \
+--enable-mbstring \
+--enable-opcache \
+--enable-pcntl \
+--with-pdo-mysql \
+--enable-shmop \
+--enable-soap \
+--enable-sockets \
+--enable-sysvmsg \
+--enable-sysvsem \
+--enable-sysvshm \
+--enable-zip \
+--without-pear
+
+ln -s /usr/local/php56 /usr/local/php
 ```
 
-#### 报错 configure: error: xml2-config not found. Please check your libxml2 installation.
-
-系统中未安装 libxml 库
-
-```bash
-yum install libxml2
-
-yum install libxml2-devel -y
-```
-
-#### 报错  configure: error: png.h not found.
-
-```bash
-yum install libpng
-
-yum install libpng-devel
-```
-
-直到提示 php 信息 后可以使用 `make && make install`
-
-![img](https://cdn.jsdelivr.net/gh/ayuayue/cdn/img/202109121245345.png)
-
-#### 重新编译
-
-如果要重新编译, 在更改了 .configure 命令或者配置的情况下,最好清空一下上次编译好的文件
+### gd库
 
 ```Bash
-make clean
+./configure --with-gd --with-freetype-dir=/usr/lib64 \
+ --with-png-dir=/usr/lib64 --with-jpeg-dir=/usr/lib64 \
+ --with-zlib-dir --with-t1lib=/usr/lib64
 ```
 
+### pdo_oci
+
+[https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
+
+下载如下两个文件（下载文件需注册）：并解压到一个文件夹中 如 instantclient_11_2
+
+`oracle-instantclient11.2-basic`
+
+`oracle-instantclient11.2-sdk`
+
+```Bash
+export LD_LIBRARY_PATH=/usr/local/instantclient_11_2
+export NLS_LANG="AMERICAN_AMERICA.AL32UTF8"  
+source ~/.bashrc
+
+yum install libaio libaio-devel -y
+
+ln -s /usr/local/instantclient_11_2/libclntsh.so.11.1 \
+ /usr/local/instantclient_11_2/libclntsh.so
+ln -s /usr/local/instantclient_11_2/libocci.so.11.1 \
+/usr/local/instantclient_11_2/libocci.so
+
+
+```
+
+先安装 oci8 , 在 php7版本的php-oci 安装时会提示安装 oci8
+
+```Bash
+cd oci8
+/usr/local/php56/bin/phpize
+
+./configure --with-php-config=/usr/local/php56/bin/php-config \
+--with-oci8=instantclient,/usr/local/instantclient_11_2
+
+make && make install
+cp modules/oci8.so /usr/local/php56/lib/php/extensions/no-debug-zts-20131226/
+```
+
+```Bash
+cd pdo_oci
+/usr/local/php56/bin/phpize
+
+./configure --with-php-config=/usr/local/php56/bin/php-config \
+ --with-pdo-oci=instantclient,/usr/local/instantclient_11_2,11.2
+
+cp modules/pdo_oci.so /usr/local/php56/lib/php/extensions/no-debug-zts-20131226/
+
+```
+
+### pecl & pear
+
+```Bash
+cd /usr/local/src/
+wget http://pear.php.net/go-pear.phar
+php go-pear.phar
+
+```
+
+### 时区问题
+
+PHP Warning: Unknown: It is not safe to rely on the system's timezone settings. You are _required_ to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in Unknown on line 0
+
+```Bash
+vi /usr/local/php56/etc/php.ini
+date.timezone = Asia/Shanghai
+
+```
 安装完成后,会在 /usr/local/apache2/modules/ 生成一个 libphp5 的文件,并且会自动更改 http.conf 增加
 
 ```
