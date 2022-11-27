@@ -81,6 +81,7 @@ git branch --set-upstream-to=origin/main main # 分支名
 ```
 然后把公钥添加进gitee。
 把https链接改为git，设置公钥后不再需要设置密码，进入项目的 .git/config。把url改成git的链接。
-```bash
+
+``bash
 
 ```
