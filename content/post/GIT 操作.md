@@ -82,6 +82,29 @@ git branch --set-upstream-to=origin/main main # 分支名
 然后把公钥添加进gitee。
 把https链接改为git，设置公钥后不再需要设置密码，进入项目的 .git/config。把url改成git的链接。
 
-``bash
 
+## git pull fatal: Not possible to fast-forward, aborting
+
+合并代码的方式有很多中：git merge,git rebase,git pull等
+git 在处理文件merge时，会分成三种处理方式
+- –ff–only fast forward模式，快速合并 有冲突就会失败
+- –no–ff 非快速合并 会生成一次commit
+- –squash 将合并后的不同分支所有的提交记录作为一次提交
+fase-forward只要存在冲突就会失败， 我们得配置git pull
 ```
+git config pull.rebase false —- 关闭 rebase
+git config pull.rebase true —–开启rebase
+git config pull.ff only/false —–开启/关闭 fast-forward
+```
+其实我们要做的是关闭rebase和fast-forward在pull中的表现，可运行如下代码解决当前分支问题：
+```
+git config pull.rebase false
+git config pull.ff false
+```
+可运行如下代码解决全局问题：
+```
+git config --global pull.rebase false
+git config --global --add pull.ff false
+```
+
+
