@@ -8,6 +8,20 @@ date: 2022-10-03 20:05:47
 lastmod: 2022-10-25 08:38:53
 ---
 # scoop
+
+## 安装到其他盘
+
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+$env:SCOOP='D:\software\scoop' # 后手动加入到系统变量中
+[Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
+scoop config proxy 127.0.0.1:7890
+
+iwr -useb get.scoop.sh | iex
+```
+
 ### bucket
 
 ```PowerShell
@@ -47,8 +61,6 @@ scoop bucket add scoop-zapps https://github.com/kkzzhizhou/scoop-zapps.git
 ```PowerShell
 
 scoop bucket add extras
-
-
 main
 extras
 versions
@@ -61,3 +73,12 @@ games
 
 ```
 
+## 软件安装
+
+```bash
+scoop checkup
+
+scoop install 7zip aria2 ccleaner gsudo neteasemusic picgo potplayer 
+scoop install sublime-text scoop-completion gow busybox dos2unix gcc
+scoop install 
+```

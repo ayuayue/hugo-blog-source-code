@@ -105,3 +105,41 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 
 ```
+
+
+---
+
+## 只提示
+
+```bash
+
+Install-Module PSReadLine -RequiredVersion 2.1.0 -Scope CurrentUser
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+```
+code $profile
+
+```
+# 每次回溯输入历史，光标定位于输入内容末尾
+
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+  
+
+# 设置 Tab 为菜单补全和 Intellisense
+
+Set-PSReadLineKeyHandler -Key "Tab" -Function MenuComplete
+
+Set-PSReadLineKeyHandler -Key "Ctrl+u" -Function DeleteLine
+
+Set-PSReadLineKeyHandler -Key "Ctrl+d" -Function ViExit
+
+
+Import-Module PSReadLine
+
+Set-PSReadLineOption -PredictionSource History
+```
