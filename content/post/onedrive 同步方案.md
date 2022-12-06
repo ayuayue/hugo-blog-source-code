@@ -14,7 +14,10 @@ MKLINK
     ``Target  指定新链接引用的路径(相对或绝对)。
 
 ```cmd
-sudo mklink /D  "C:\Users\14012\tools" "C:\Users\14012\OneDrive\config\kbz\tools" 
-sudo mklink /D  "C:\Users\14012\.wind" "C:\Users\14012\OneDrive\config\kbz\.wind" 
+mklink /D  "C:\Users\14012\tools" "C:\Users\14012\OneDrive\config\kbz\tools" 
+mklink /D  "C:\Users\14012\.wind" "C:\Users\14012\OneDrive\config\kbz\.wind" 
+```
+
+nd" 
 ```
 

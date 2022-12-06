@@ -143,3 +143,9 @@ Import-Module PSReadLine
 
 Set-PSReadLineOption -PredictionSource History
 ```
+
+## 安装 z 模块跳转
+
+```bash
+Install-Module -Name ZLocation
+```

@@ -17,9 +17,10 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 $env:SCOOP='D:\software\scoop' # 后手动加入到系统变量中
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
-scoop config proxy 127.0.0.1:7890
+
 
 iwr -useb get.scoop.sh | iex
+scoop config proxy 127.0.0.1:7890
 ```
 
 ### bucket
@@ -78,7 +79,7 @@ games
 ```bash
 scoop checkup
 
-scoop install 7zip aria2 ccleaner gsudo neteasemusic picgo potplayer 
+scoop install 7zip aria2 ccleaner gsudo neteasemusic picgo potplayer trafficmonitor
 scoop install sublime-text scoop-completion gow busybox dos2unix gcc
-scoop install 
+scoop install imhex WXQQ_RevokeMsgPatcher telegram neofetch another-redis-desktop-manager
 ```
